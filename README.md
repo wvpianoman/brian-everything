@@ -1,6 +1,6 @@
 # brian-everything
 
- This is my personal installation/maintenance scripts for MX Linux, Ultrmarine and Solus.  I incloded my MixOS repo here, but I do not use Nix any longer.
+ This is my personal installation/maintenance scripts for MX Linux, Ultrmarine and Solus.  I also have a NixOS repo on github, but I do not use Nix any longer.
 
  This fits my personal use-case, and might not be compatible with yours.
 
