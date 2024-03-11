@@ -43,19 +43,19 @@ if [ -f /etc/debian_version ]; then
     echo -e "\e[34mDebian-based distribution detected.\e[0m"  # Blue color
     echo ""
 #    install_debian_packages "${ubuntu_packages[@]}"
-    ( exec "$HOME/brian-everything/MX-Linux/1-PACKAGES/1-PKGS.sh" )
+    ( exec "$HOME/GitHub/brian-everything/MX-Linux/1-PACKAGES/1-PKGS.sh" )
 elif [ -f /etc/redhat-release ]; then
     echo ""
     echo -e "\e[34mFedora-based distribution detected.\e[0m"  # Blue color
     echo ""
 #    install_fedora_packages "${fedora_packages[@]}"
-    ( exec "$HOME//brian-everything/ULTRAMARINE/mushroom-magic/1-PACKAGES/packages.sh" )
+    ( exec "$HOME/GitHub/brian-everything/ULTRAMARINE/mushroom-magic/1-PACKAGES/packages.sh" )
 elif [ -f /usr/bin/eopkg ]; then
     echo ""
     echo -e "\e[34mSolus-based distribution detected.\e[0m"  # Blue color
     echo ""
 #    install_solus_packages "${solus_packages[@]}"
-    ( exec "$HOME/brian-everything/SOLUS/1-PACKAGES/packages.sh" )
+    ( exec "$HOME/GitHub/brian-everything/SOLUS/1-PACKAGES/packages.sh" )
 elif [ -f /etc/lsb-release ]; then
     # Ubuntu uses /etc/lsb-release
     echo ""
