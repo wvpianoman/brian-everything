@@ -86,7 +86,7 @@ echo "Installing Essential Software Packages"
 
 sudo dnf install -y acl akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv
 
-sudo dnf install -y dnf-plugins-core dnf-utils dnsutils duf earlyoom easyeffects espeak espeak-ng fancontrol-{gui,gui-kcm,gui-plasmoid} fastfetch fd-find ffmpeg ffmpeg-libs ffmpegthumbnailer ffmpegthumbs figlet flatpak fortune-mod git gnome-font-viewer
+sudo dnf install -y dnf-plugins-core dnf-utils dnfdragora dnsutils dnf5 dnf5-plugins duf earlyoom easyeffects espeak espeak-ng fancontrol-{gui,gui-kcm,gui-plasmoid} fastfetch fd-find ffmpeg ffmpeg-libs ffmpegthumbnailer ffmpegthumbs figlet flatpak fortune-mod git gnome-font-viewer
 
 sudo dnf install -y gnupg2 google-noto-emoji-color-fonts grep grub-customizer gstreamer1-{libav,vaapi} gstreamer1-plugins-{bad-free,bad-free-extras,good,good-extras,ugly,ugly-free} gtk-murrine-engine gtk{2,3}-immodule-xim gtk2-engines haveged htop ibus-gtk4 intel-media-driver iptables iptables-services jq
 
@@ -251,18 +251,7 @@ rm ./FiraCode.zip ./Meslo.zip ./WPS-FONTS.zip
 	yellow_msg 'Default sysctl.conf file Saved. Directory: /etc/sysctl.conf.bak'
 	echo
 	gum spin --spinner dot --title "Stand-by..." -- sleep 1
-##############################################################
 
-# Function to remove residual configuration files
-function remove_residual_config_files() {
-    packages=$(dpkg -l | awk '/^rc/ { print $2 }')
-    if [ -n "$packages" ]; then
-        sudo dpkg -P $packages
-        echo "Residual configuration files removed."
-    else
-        echo "No residual configuration files found."
-    fi
-}
 
 # Function to clear systemd journal logs
 function clear_journal_logs() {
@@ -294,12 +283,7 @@ echo -e "|    to back up your APT packages and more   |"
 echo -e "|                                            |"
 echo -e "----------------------------------------------\n\n"
 
-exit 0
-
-
-
-
-
+# exit 0
 
 # Function to check port 22
 check_port22() {
@@ -328,16 +312,11 @@ print_yellow() {
 	echo -e "\e[93m$1\e[0m"
 }
 
-
-
 install_apps() {
 	display_message "[${GREEN}✔${NC}]  Installing afew personal apps..."
 
-
 	# Enable trim support
 	sudo systemctl enable fstrim.timer
-
-
 
 	# Execute rygel to start DLNA sharing
 	/usr/bin/rygel-preferences
@@ -347,4 +326,3 @@ install_apps() {
 	/usr/bin/profile-sync-daemon preview
 	# sudo dnf remove profile-sync-daemon
 	# psd profile located in $HOME/.config/psd/psd.conf
-
