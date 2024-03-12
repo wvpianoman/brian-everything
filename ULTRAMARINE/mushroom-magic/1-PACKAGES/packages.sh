@@ -21,101 +21,106 @@
 # Brian
 # 4/3/2024
 
-clear
+# clear
 
 # Function to install packages using apt package manager (debian)
-install_debian_packages() {
-    local software_packages=("$@")
-    echo "The following packages will be installed:"
-    for ((i = 0; i < ${#software_packages[@]}; i++)); do
-        echo "- ${software_packages[i]}"
-        echo "Explanation: ${software_explanations[i]}"
-        sleep 3
-    done
-
-    read -p "Do you want to proceed with the installation? (y/n): " choice
-
-    if [[ $choice =~ ^[Yy]$ ]]; then
-        echo "Installing the packages using apt..."
-        sudo apt install -y --install-recommends "${software_packages[@]}"
-        echo "Package installation completed."
-    else
-        echo "Package installation skipped."
-    fi
-}
+#  install_debian_packages() {
+#     local software_packages=("$@")
+#     echo "The following packages will be installed:"
+#     for ((i = 0; i < ${#software_packages[@]}; i++)); do
+#         echo "- ${software_packages[i]}"
+#         echo "Explanation: ${software_explanations[i]}"
+#         sleep 3
+#     done
+#
+#      read -p "Do you want to proceed with the installation? (y/n): " choice
+#
+#     if [[ $choice =~ ^[Yy]$ ]]; then
+#         echo "Installing the packages using apt..."
+#         sudo apt install -y --install-recommends "${software_packages[@]}"
+#         echo "Package installation completed."
+#     else
+#         echo "Package installation skipped."
+#     fi
+# }
 
 # Function to install packages using Solus package manager
-install_solus_packages() {
-    local software_packages=("$@")
-    echo "The following packages will be installed:"
-    for ((i = 0; i < ${#software_packages[@]}; i++)); do
-        echo "- ${software_packages[i]}"
-        echo "Explanation: ${software_explanations[i]}"
-        sleep 3
-    done
-
-    read -p "Do you want to proceed with the installation? (y/n): " choice
-
-    if [[ $choice =~ ^[Yy]$ ]]; then
-        echo "Installing the packages using eopkg..."
-        sudo eopkg install -y "${software_packages[@]}"
-        echo "Package installation completed."
-    else
-        echo "Package installation skipped."
-    fi
-}
+# install_solus_packages() {
+#     local software_packages=("$@")
+#     echo "The following packages will be installed:"
+#     for ((i = 0; i < ${#software_packages[@]}; i++)); do
+#         echo "- ${software_packages[i]}"
+#         echo "Explanation: ${software_explanations[i]}"
+#         sleep 3
+#     done
+#
+#     read -p "Do you want to proceed with the installation? (y/n): " choice
+#
+#     if [[ $choice =~ ^[Yy]$ ]]; then
+#         echo "Installing the packages using eopkg..."
+#         sudo eopkg install -y "${software_packages[@]}"
+#         echo "Package installation completed."
+#     else
+#         echo "Package installation skipped."
+#     fi
+# }
 
 # Function to install packages using fedora package manager
-install_fedora_packages() {
-    local software_packages=("$@")
-    echo "Installing Essential Software Packages"
-        sudo dnf install -y acl akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf-plugins-core dnf-utils dnsutils duf earlyoom easyeffects espeak espeak-ng fancontrol-{gui,gui-kcm,gui-plasmoid} fastfetch fd-find ffmpeg ffmpeg-libs ffmpegthumbnailer ffmpegthumbs figlet flatpak fortune-mod git gnome-font-viewer gnupg2 google-noto-emoji-color-fonts grep grub-customizer gstreamer1-{libav,vaapi} gstreamer1-plugins-{bad-free,bad-free-extras,good,good-extras,ugly,ugly-free} gtk-murrine-engine gtk{2,3}-immodule-xim gtk2-engines haveged htop ibus-gtk4 intel-media-driver iptables iptables-services jq kate kate-plugins kernel-modules-extra kdegraphics-thumbnailers kdepim libavcodec-{free,freeworld} libffi libffi-devel libfreeaptx libfreeaptx-tools libgcab1 librabbitmq librabbitmq-tools librist libsodium libsodium-devel libtool libva-intel-driver libvdpau libvdpau-va-gl libXext llvm16-libs lpcnetfreedv lsd make materia-kde-yakuake mbedtls meld mesa-{libGL,libGLU,libd3d}-devel mesa-filesystem mesa-libEGL mesa-libGL mesa-libGL{w,U} mesa-libglapi mesa-libO{penCL,SMesa} mesa-va-drivers mesa-vulkan-drivers mozilla-ublock-origin merkuro mpg123 nano neofetch neovim neovim-qt net-snmp net-tools nftables openssh openssh-{clients,server} ostree p7zip p7zip-gui p7zip-plugins PackageKit pandoc pip pipewire-codec-aptx pkg-config plasma-discover-{flatpak,packagekit,snap} plasma-firewall-ufw plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode rclone rclone-browser ripgrep rsync rygel sassc screen socat openssl-devel sshpass sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ufw ufw-kde ugrep un{zip,rar} unrar-free variety vim virt-manager wget wsdd xclip xorg-x11-fonts-ISO8859-1-100dpi zip zram zram-generator zram-generator-defaults zstd
-        echo "Package installation completed."
+# install_fedora_packages() {
+#     local software_packages=("$@")
+
+echo "Installing Essential Software Packages"
+
+sudo dnf install -y acl akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf-plugins-core dnf-utils dnsutils duf earlyoom easyeffects espeak espeak-ng fancontrol-{gui,gui-kcm,gui-plasmoid} fastfetch fd-find ffmpeg ffmpeg-libs ffmpegthumbnailer ffmpegthumbs figlet flatpak fortune-mod git gnome-font-viewer
+
+sudo dnf install -y gnupg2 google-noto-emoji-color-fonts grep grub-customizer gstreamer1-{libav,vaapi} gstreamer1-plugins-{bad-free,bad-free-extras,good,good-extras,ugly,ugly-free} gtk-murrine-engine gtk{2,3}-immodule-xim gtk2-engines haveged htop ibus-gtk4 intel-media-driver iptables iptables-services jq kate kate-plugins kernel-modules-extra kdegraphics-thumbnailers kdepim libavcodec-{free,freeworld} libffi libffi-devel libfreeaptx libfreeaptx-tools libgcab1 librabbitmq librabbitmq-tools
+
+sudo dnf install -y librist libsodium libsodium-devel libtool libva-intel-driver libvdpau libvdpau-va-gl libXext llvm16-libs lpcnetfreedv lsd make materia-kde-yakuake mbedtls meld mesa-{libGL,libGLU,libd3d}-devel mesa-filesystem mesa-libEGL mesa-libGL mesa-libGL{w,U} mesa-libglapi mesa-libO{penCL,SMesa} mesa-va-drivers mesa-vulkan-drivers mozilla-ublock-origin merkuro mpg123 nano neofetch neovim neovim-qt net-snmp net-tools nftables openssh openssh-{clients,server} ostree p7zip p7zip-gui
+
+sudo dnf install -y p7zip-plugins PackageKit pandoc pip pipewire-codec-aptx pkg-config plasma-discover-{flatpak,packagekit,snap} plasma-firewall-ufw plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode rclone rclone-browser ripgrep rsync rygel sassc screen socat openssl-devel sshpass sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ufw ufw-kde ugrep un{zip,rar} unrar-free variety vim virt-manager wget wsdd xclip xorg-x11-fonts-ISO8859-1-100dpi zip zram zram-generator zram-generator-defaults zstd
+
+echo "Package installation completed."
     sleep 3
 
-        echo "Installiong Software Packages"
-        sudo dnf install -y blender boomaga digikam flameshot gimp gimp-help gimp-data-extras inkscape kdepim kdepim-addons krita neochat rhythmbox scribus  shotwell simplescreenrecorder syncthing transmission transmission-{remote-gtk,gtk,qt} uget vlc yakuake
-        echo "Package installation completed."
+echo "Installiong Software Packages"
+
+sudo dnf install -y blender boomaga digikam flameshot gimp gimp-help gimp-data-extras inkscape kdepim kdepim-addons krita neochat rhythmbox scribus shotwell
+
+sudo dnf install -y simplescreenrecorder syncthing transmission transmission-{remote-gtk,gtk,qt} uget vlc yakuake
+echo "Package installation completed."
     sleep 3
 
-        echo "Installing utilites for different file system access"
-		sudo dnf install -y apfs-fuse btrfs-progs disktype exfatprogs f2fs-tools fuse-sshfs hfsutils hfsplus-tools jfsutils lvm2 nilfs-utils ntfs-3g udftools xfsprogs
-        echo "Package installation completed."
+echo "Installing utilites for different file system access"
+
+sudo dnf install -y apfs-fuse btrfs-progs disktype exfatprogs f2fs-tools fuse-sshfs hfsutils hfsplus-tools jfsutils lvm2 nilfs-utils ntfs-3g udftools xfsprogs
+
+echo "Package installation completed."
     sleep 3
-}
-
-
-
-
+# }
 
 sudo dnf install earlyoom
 sudo systemctl enable --now earlyoom
 
-
-
-
-
 # Check distribution type (Debian, Fedora or Solus) and call respective function from above
-if [ -f /etc/debian_version ]; then
-    echo""
-    echo -e "\e[34mDebian-based distribution detected.\e[0m"  # Blue color
-    echo""
-    install_debian_packages "${software_packages[@]}"
-elif [ -f /etc/redhat-release ]; then
-    echo""
-    echo -e "\e[34mFedora-based distribution detected."
-    echo ""
-    install_fedora_packages "${software_packages[@]}"
-elif [ -f /usr/bin/eopkg ]; then
-    echo""
-    echo -e "\e[34mSolus-based distribution detected.\e[0m"  # Blue color
-    echo""
-    install_solus_packages "${software_packages[@]}"
-else
-    echo "Unsupported distribution."
-fi
+# if [ -f /etc/debian_version ]; then
+#     echo""
+#     echo -e "\e[34mDebian-based distribution detected.\e[0m"  # Blue color
+#     echo""
+#     install_debian_packages "${software_packages[@]}"
+# elif [ -f /etc/redhat-release ]; then
+#     echo""
+#     echo -e "\e[34mFedora-based distribution detected."
+#     echo ""
+#     install_fedora_packages "${software_packages[@]}"
+# elif [ -f /usr/bin/eopkg ]; then
+#     echo""
+#     echo -e "\e[34mSolus-based distribution detected.\e[0m"  # Blue color
+#     echo""
+#     install_solus_packages "${software_packages[@]}"
+# else
+#     echo "Unsupported distribution."
+# fi
 
-#################################################################################
 
 # Installing fonts
 sudo dnf install curl cabextract xorg-x11-font-utils fontconfig -y
