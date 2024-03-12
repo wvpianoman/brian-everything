@@ -69,15 +69,36 @@
 # install_fedora_packages() {
 #     local software_packages=("$@")
 
+echo "Installing RPM Fusion Repositories"
+
+	# Install Apps
+	sudo dnf install \
+  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+    sudo dnf install \
+  https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+	sudo dnf install rpmfusion-free-release-tainted
+	sudo dnf install rpmfusion-nonfree-release-tainted
+	sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
+
+sleep 3
+
 echo "Installing Essential Software Packages"
 
-sudo dnf install -y acl akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf-plugins-core dnf-utils dnsutils duf earlyoom easyeffects espeak espeak-ng fancontrol-{gui,gui-kcm,gui-plasmoid} fastfetch fd-find ffmpeg ffmpeg-libs ffmpegthumbnailer ffmpegthumbs figlet flatpak fortune-mod git gnome-font-viewer
+sudo dnf install -y acl akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv
 
-sudo dnf install -y gnupg2 google-noto-emoji-color-fonts grep grub-customizer gstreamer1-{libav,vaapi} gstreamer1-plugins-{bad-free,bad-free-extras,good,good-extras,ugly,ugly-free} gtk-murrine-engine gtk{2,3}-immodule-xim gtk2-engines haveged htop ibus-gtk4 intel-media-driver iptables iptables-services jq kate kate-plugins kernel-modules-extra kdegraphics-thumbnailers kdepim libavcodec-{free,freeworld} libffi libffi-devel libfreeaptx libfreeaptx-tools libgcab1 librabbitmq librabbitmq-tools
+sudo dnf install -y dnf-plugins-core dnf-utils dnsutils duf earlyoom easyeffects espeak espeak-ng fancontrol-{gui,gui-kcm,gui-plasmoid} fastfetch fd-find ffmpeg ffmpeg-libs ffmpegthumbnailer ffmpegthumbs figlet flatpak fortune-mod git gnome-font-viewer
 
-sudo dnf install -y librist libsodium libsodium-devel libtool libva-intel-driver libvdpau libvdpau-va-gl libXext llvm16-libs lpcnetfreedv lsd make materia-kde-yakuake mbedtls meld mesa-{libGL,libGLU,libd3d}-devel mesa-filesystem mesa-libEGL mesa-libGL mesa-libGL{w,U} mesa-libglapi mesa-libO{penCL,SMesa} mesa-va-drivers mesa-vulkan-drivers mozilla-ublock-origin merkuro mpg123 nano neofetch neovim neovim-qt net-snmp net-tools nftables openssh openssh-{clients,server} ostree p7zip p7zip-gui
+sudo dnf install -y gnupg2 google-noto-emoji-color-fonts grep grub-customizer gstreamer1-{libav,vaapi} gstreamer1-plugins-{bad-free,bad-free-extras,good,good-extras,ugly,ugly-free} gtk-murrine-engine gtk{2,3}-immodule-xim gtk2-engines haveged htop ibus-gtk4 intel-media-driver iptables iptables-services jq
 
-sudo dnf install -y p7zip-plugins PackageKit pandoc pip pipewire-codec-aptx pkg-config plasma-discover-{flatpak,packagekit,snap} plasma-firewall-ufw plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode rclone rclone-browser ripgrep rsync rygel sassc screen socat openssl-devel sshpass sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ufw ufw-kde ugrep un{zip,rar} unrar-free variety vim virt-manager wget wsdd xclip xorg-x11-fonts-ISO8859-1-100dpi zip zram zram-generator zram-generator-defaults zstd
+sudo dnf install -y kate kate-plugins kernel-modules-extra kdegraphics-thumbnailers kdepim libavcodec-{free,freeworld} libffi libffi-devel libfreeaptx libfreeaptx-tools libgcab1 librabbitmq librabbitmq-tools librist libsodium libsodium-devel libtool libva-intel-driver libvdpau libvdpau-va-gl libXext
+
+sudo dnf install -y llvm16-libs lpcnetfreedv lsd make materia-kde-yakuake mbedtls meld mesa-{libGL,libGLU,libd3d}-devel mesa-filesystem mesa-libEGL mesa-libGL mesa-libGL{w,U} mesa-libglapi mesa-libO{penCL,SMesa} mesa-va-drivers mesa-vulkan-drivers mozilla-ublock-origin merkuro mpg123
+
+sudo dnf install -y nano neofetch neovim neovim-qt net-snmp net-tools nftables openssh openssh-{clients,server} ostree p7zip p7zip-gui p7zip-plugins PackageKit pandoc pip pipewire-codec-aptx pkg-config plasma-discover-{flatpak,packagekit,snap} plasma-firewall-ufw
+
+sudo dnf install -y plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode rclone rclone-browser ripgrep rsync rygel sassc screen socat openssl-devel sshpass sxiv tar terminator tlp tlp-rdw
+
+sudo dnf install -y tlpi tumbler tumbler-extras ufw ufw-kde ugrep un{zip,rar} unrar-free variety vim virt-manager wget wsdd xclip xorg-x11-fonts-ISO8859-1-100dpi zip zram zram-generator zram-generator-defaults zstd
 
 echo "Package installation completed."
     sleep 3
@@ -87,6 +108,7 @@ echo "Installiong Software Packages"
 sudo dnf install -y blender boomaga digikam flameshot gimp gimp-help gimp-data-extras inkscape kdepim kdepim-addons krita neochat rhythmbox scribus shotwell
 
 sudo dnf install -y simplescreenrecorder syncthing transmission transmission-{remote-gtk,gtk,qt} uget vlc yakuake
+
 echo "Package installation completed."
     sleep 3
 
@@ -314,17 +336,6 @@ install_apps() {
 
 	# Enable trim support
 	sudo systemctl enable fstrim.timer
-
-	# Install Apps
-	sudo dnf install \
-  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-    sudo dnf install \
-  https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-	sudo dnf install rpmfusion-free-release-tainted
-	sudo dnf install rpmfusion-nonfree-release-tainted
-	sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
-
-
 
 
 
