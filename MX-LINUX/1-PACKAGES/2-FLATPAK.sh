@@ -189,33 +189,31 @@ EOF
 
 # Define an array of Flatpak application IDs
 flatpak_apps=(
-#    "com.sindresorhus.Caprine"
-#    "com.transmissionbt.Transmission"
 #    "com.anydesk.Anydesk"
-#    "me.kozec.syncthingtk"
-#    "com.github.zocker_160.SyncThingy"
-#    "org.onlyoffice.desktopeditors"
-#    "com.wps.Office"
-    "com.jgraph.drawio.desktop"
-
 #    "org.blender.Blender"
+#    "com.sindresorhus.Caprine"
+#    "com.discordapp.Discord"
+    "com.jgraph.drawio.desktop"
+    "one.ablaze.floorp"
 #    "org.gimp.GIMP"
-#    "org.inkscape.Inkscape"
-#    "org.kde.krita"
-#    "net.scribus.Scribus"
-#    "org.gnome.Shotwell"
-#    "org.videolan.VLC"
-
+#    "com.google.Chrome"
     "com.google.ChromeDev"
     "com.microsoft.EdgeDev"
-    "one.ablaze.floorp"
-
-#    "com.discordapp.Discord"
+    "io.github.wereturtle.ghostwriter"
+#    "org.inkscape.Inkscape"
+#    "org.kde.krita"
+#    "org.libreoffice.LibreOffice"
+#    "net.scribus.Scribus"
+#    "org.gnome.Shotwell"
+#    "me.kozec.syncthingtk"
+#    "com.github.zocker_160.SyncThingy"
+#    "com.transmissionbt.Transmission"
+#    "io.github.shiftey.Desktop"
+#    "org.onlyoffice.desktopeditors"
 #    "org.telegram.desktop"
 #    "org.telegram.desktop.webview"
-
-#    "io.github.shiftey.Desktop" # GitHub Desktop
-#    "com.axosoft.GitKraken"
+#    "org.videolan.VLC"
+#    "com.wps.Office"
 )
 
 # Install applications
