@@ -16,9 +16,7 @@ E: Unable to locate package libgcab1
 E: Unable to locate package librist
 
 E: Unable to locate package libva-intel-driver
-E: Unable to locate package libvdpau
-E: Unable to locate package libvdpau-va-gl
-E: Unable to locate package libXext
+
 
 E: Unable to locate package llvm16-libs
 E: Unable to locate package lpcnetfreedv
