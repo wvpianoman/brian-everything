@@ -24,9 +24,9 @@ sudo apt install -y --install-recommends acl akonadi akonadi-calendar-tools akon
 
 sudo apt install -y --install-recommends dnsutils dolphin-plugins duf earlyoom easyeffects espeak espeak-ng fancontrol mbpfan fd-find ffmpeg ffmpeg-libs ffmpegthumbnailer ffmpegthumbs figlet flatpak fortune-mod git gnome-font-viewer
 
-sudo apt install -y --install-recommends gnupg2 google-noto-emoji-color-fonts grep grub-customizer gstreamer1-{libav,vaapi} gstreamer1-plugins-{bad-free,bad-free-extras,good,good-extras,ugly,ugly-free} gtk-murrine-engine gtk{2,3}-immodule-xim gtk2-engines haveged htop ibus-gtk4 intel-media-driver iptables iptables-services jq
+sudo apt install -y --install-recommends gnupg2 google-noto-emoji-color-fonts grep grub-customizer gstreamer1.0-{libav,vaapi} gstreamer1.0-plugins-{bad-free,bad-free-extras,good,good-extras,ugly,ugly-free} gtk2-engines-murrine murrine-themes uim-gtk{2.0,3,qt5}-immodule gtk2-engines haveged htop ibus-gtk4 intel-media-va-driver intel-media-va-driver-non-free iptables jq
 
-sudo apt install -y --install-recommends kate kdegraphics-thumbnailers kdepim libavcodec-{free,freeworld} libffi libffi-devel libfreeaptx libfreeaptx-tools libgcab1 librabbitmq librabbitmq-tools librist libsodium libsodium-devel libtool libva-intel-driver libvdpau libvdpau-va-gl libXext
+sudo apt install -y --install-recommends kate kdegraphics-thumbnailers kdepim libavcodec-extra libffi8 libffi-dev libfreeaptx libfreeaptx-tools libgcab1 librabbitmq4 librabbitmq-dev librist libsodium23 libsodium-dev libtool libva-intel-driver libvdpau1 libvdpau-va-gl1 libxext6
 
 sudo apt install -y --install-recommends llvm16-libs lpcnetfreedv lsd make materia-kde-yakuake mbedtls meld mesa-{libGL,libGLU,libd3d}-devel mesa-filesystem mesa-libEGL mesa-libGL mesa-libGL{w,U} mesa-libglapi mesa-libO{penCL,SMesa} mesa-va-drivers mesa-vulkan-drivers ublock-origin-doc webext-ublock-origin-firefox mpg123
 
