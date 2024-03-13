@@ -17,128 +17,28 @@
 #https://patorjk.com/software/taag/#p=display&c=bash&f=ANSI%20Shadow&t=MX%20Linux%20Pkgs
 
 # Install some software:
-software_packages=(
-    blender blender-data gimp gimp-help-en krita inkscape grep fortune-mod fortunes-min vlc nvidia-detect
-    fortunes-debian-hints font-manager fortunes-bofh-excuses earlyoom direnv boomaga espeak figlet gedit sntp
-    grub-customizer aria2 flameshot btop duf fonts-powerline fonts-powerline fancontrol shotwell transmission
-    transmission-{remote-gtk,gtk,qt} syncthing syncthing-gtk scribus scribus-doc telegram-desktop variety rclone
-    rclone-browser ugrep ripgrep meld pandoc tlp tlp-rdw tlpui powertop neochat rygel wsdd uget lsd sxiv synaptic
-    simplescreenrecorder scribus-template acl attr cifs-utils dnsutils ffmpeg ffmpegthumbnailer firmware-realtek
-    flatpak rar unrar p7zip-rar gdebi gnome-software-plugin-flatpak gstreamer1.0-{libav,tools,vaapi} rhythmbox
-    gstreamer1.0-plugins-{bad,ugly} kdegraphics-thumbnailers libavcodec-extra neofetch ntp ntpdate plocate snmp
-    python3-setproctitle simplescreenrecorder software-properties-common terminator ttf-mscorefonts-installer
-    tumbler-plugins-extra plasma-discover-backend-{fwupd,snap,flatpak}
-    )
 
-software_explanations=(
-    "acl                               Access control list utilities for file permissions management."
-    "aria2                             High speed download utility"
-    "attr                              Tools for managing extended attributes on filesystems."
-    "blender                           Very fast and versatile 3D modeller/renderer"
-    "blender-data                      Very fast and versatile 3D modeller/renderer - data pack"
-    "boomaga                           virtual printer for viewing a document before printing"
-    "btop                              Modern and colorful command line resource monitor that shows usage and stats"
-    "cifs-utils                        Utilities for mounting and managing CIFS/SMB file systems."
-    "cookietool                        suite of programs to help maintain a fortune database"
-    "direnv                            Utility to set directory specific environment variables"
-    "dnsutils                          DNS utilities for querying DNS servers."
-    "duf                               Disk Usage/Free Utility"
-    "earlyoom                          Early OOM Daemon"
-    "espeak                            Multi-lingual software speech synthesizer"
-    "fancontrol                        utility to control the fan speed"
-    "ffmpeg                            Complete, cross-platform solution for recording, converting, and streaming audio and video."
-    "ffmpegthumbnailer                 Lightweight video thumbnailer."
-    "figlet                            Make large character ASCII banners out of ordinary text"
-    "firmware-realtek                  Firmware files for Realtek WiFi cards."
-    "flameshot                         Powerful yet simple to use screenshot software."
-    "flatpak                           Application sandboxing and distribution framework."
-    "font-manager                      font management application for the GNOME desktop"
-    "fonts-powerline                   prompt and statusline utility (symbols font)"
-    "fortune-mod                       provides fortune cookies on demand"
-    "fortunes                          Data files containing fortune cookies"
-    "fortunes-bofh-excuses             Description: BOFH excuses for fortune"
-    "fortunes-debian-hints             Debian Hints for fortune"
-    "fortunes-min                      Data files containing selected fortune cookies"
-    "gdebi                             Simple tool for installing deb packages."
-    "gedit                             popular text editor for the GNOME desktop environment"
-    "gimp                              GNU Image Manipulation Program"
-    "gimp-help-en                      Documentation for GIMP (English)"
-    "gnome-software-plugin-flatpak     GNOME Software plugin for Flatpak integration."
-    "grep                              GNU grep. egrep and fgrep"
-    "grub-customizer                   GUI to configure GRUB2 and BURG"
-    "gstreamer1.0-libav                GStreamer plugins for the libav codec library."
-    "gstreamer1.0-plugins-bad          GStreamer plugins from the 'bad' set."
-    "gstreamer1.0-plugins-ugly         GStreamer plugins from the 'ugly' set."
-    "gstreamer1.0-tools                Tools for GStreamer multimedia framework."
-    "gstreamer1.0-vaapi                GStreamer plugins for video decoding/encoding using VA-API."
-    "inkscape                          vector-based drawing program"
-    "kdegraphics-thumbnailers          Graphics file format thumbnailers for KDE."
-    "krita                             pixel-based image manipulation program"
-    "libavcodec-extra                  Extra multimedia codecs for libavcodec."
-    "lsd                               ls command with a lot of pretty colors and some other stuff"
-    "meld                              graphical tool to diff and merge files"
-    "neochat                           Matrix client for desktop and mobile made by KDE"
-    "neofetch                          Fast, highly customizable system info script."
-    "ntp                               Network Time Protocol daemon and utility programs."
-    "ntpdate                           Client for setting system time from NTP servers."
-    "nvidia-detect                     NVIDIA GPU detection utility."
-    "p7zip-rar                         RAR support for p7zip."
-    "pandoc                            general markup converter"
-    "plasma-discover-backend-flatpak   Flatpak backend for Plasma Discover."
-    "plasma-discover-backend-fwupd     Discover software management suite - fwupd backend"
-    "plasma-discover-backend-snap      Discover software management suite - Snap backend"
-    "plocate                           Fast filesystem search tool."
-    "powertop                          diagnose issues with power consumption and management"
-    "python3-setproctitle              Allow customization of the process title."
-    "rar                               Archive manager for RAR files."
-    "rclone                            rsync for commercial cloud storage"
-    "rclone-browser                    Simple cross platform GUI for rclone"
-    "rhythmbox                         Music player and organizer for GNOME."
-    "ripgrep                           recursively searches your current directory for a regex"
-    "rygel                             GNOME UPnP/DLNA services"
-    "scribus                           Open Source Desktop Page Layout"
-    "scribus-doc                       Documentation for Scribus"
-    "scribus-template                  additional scribus templates"
-    "shotwell                          Digital Photo Organizer"
-    "simplescreenrecorder              Feature-rich screen recorder for X11 and OpenGL"
-    "simplescreenrecorder              Screen recorder for Linux."
-    "snmp                              SNMP (Simple Network Management Protocol) applications."
-    "sntp                              Simple Network Time Protocol (SNTP) client."
-    "software-properties-common        Software properties common utilities."
-    "sxiv                              simple X image viewer"
-    "synaptic                          Graphical package manager for apt."
-    "telegram-desktop                  fast and secure mnessaging application"
-    "terminator                        Multiple GNOME terminals in one window."
-    "tlp                               feature-rich command-line utility, saving laptop battery power"
-    "tlp-rdw                           TLP Radio device wizard providing event based switching of bluetooth, NFC, Wi-Fi and WWAN"
-    "tlpui                             GUI for easy TLP configuration"
-    "transmission                      Lightweight BitTorrent Client"
-    "transmission-{remote-gtk,gtk,qt}  Lightweight BitTorrent Client (GTK+ & QT Interface)"
-    "ttf-mscorefonts-installer         Installer for Microsoft TrueType core fonts."
-    "tumbler-plugins-extra             Additional plugins for the tumbler thumbnail rendering service."
-    "uget                              easy-to-use download manager written in GTK+"
-    "ugrep                             faster grep with an interactive query GUI"
-    "unrar                             Extract files from RAR archives."
-    "variety                           Wallpaper changer, downloader and manager"
-    "vlc                               Multimedia player and streaming server."
-    "wsdd                              Python Web Services Discovery Daemon, Windows Net Browsing"
-)
-
-echo "The following packages will be installed:"
-for ((i = 0; i < ${#software_packages[@]}; i++)); do
-    echo "- ${software_explanations[i]}"
-done
-
-echo
-read -p "Do you want to proceed with the installation? (y/n): " choice
-
-if [[ $choice =~ ^[Yy]$ ]]; then
     echo "Installing the packages..."
-    sudo apt install -y --install-recommends "${software_packages[@]}"
-    echo "Package installation completed."
-else
-    echo "Package installation skipped."
-fi
+
+sudo apt install -y --install-recommends acl akonadi akonadi-calendar-tools akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv
+
+sudo apt install -y --install-recommends dnsutils dolphin-plugins duf earlyoom easyeffects espeak espeak-ng fancontrol mbpfan fd-find ffmpeg ffmpeg-libs ffmpegthumbnailer ffmpegthumbs figlet flatpak fortune-mod git gnome-font-viewer
+
+sudo apt install -y --install-recommends gnupg2 google-noto-emoji-color-fonts grep grub-customizer gstreamer1-{libav,vaapi} gstreamer1-plugins-{bad-free,bad-free-extras,good,good-extras,ugly,ugly-free} gtk-murrine-engine gtk{2,3}-immodule-xim gtk2-engines haveged htop ibus-gtk4 intel-media-driver iptables iptables-services jq
+
+sudo apt install -y --install-recommends kate kdegraphics-thumbnailers kdepim libavcodec-{free,freeworld} libffi libffi-devel libfreeaptx libfreeaptx-tools libgcab1 librabbitmq librabbitmq-tools librist libsodium libsodium-devel libtool libva-intel-driver libvdpau libvdpau-va-gl libXext
+
+sudo apt install -y --install-recommends llvm16-libs lpcnetfreedv lsd make materia-kde-yakuake mbedtls meld mesa-{libGL,libGLU,libd3d}-devel mesa-filesystem mesa-libEGL mesa-libGL mesa-libGL{w,U} mesa-libglapi mesa-libO{penCL,SMesa} mesa-va-drivers mesa-vulkan-drivers ublock-origin-doc webext-ublock-origin-firefox mpg123
+
+sudo apt install -y --install-recommends nano neofetch neovim neovim-qt snmpd net-tools nftables openssh-{client,server} ostree p7zip p7zip-full p7zip-rar packagekit pandoc pip pipewire-audio pipewire-doc pkg-config plasma-discover-backend-{flatpak,fwupd} plasma-firewall
+
+sudo apt install -y --install-recommends plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode rclone rclone-browser ripgrep rsync rygel sassc screen socat sshpass sxiv tar terminator tlp tlp-rdw
+
+sudo apt install -y --install-recommends tlpui tumbler tumbler-plugins-extras ufw ugrep un{zip,rar} unrar-free variety vim virt-manager wget wsdd xclip xfonts-100dpi zip systemd-zram-generator zramswap-sysvinit-compat zram-tools zram-generator-defaults zstd
+
+echo "Package installation completed."
+    sleep 3
+
 
 #Install gum : A tool for glamorous shell scripts. https://github.com/charmbracelet/gum
 sudo mkdir -p /etc/apt/keyrings
@@ -149,43 +49,21 @@ sudo apt update && sudo apt install gum
 sudo apt install earlyoom
 sudo systemctl enable --now earlyoom
 
+echo "Installiong Software Packages"
+
+sudo apt install -y --install-recommends blender blender-data gimp gimp-help-en krita inkscape boomaga digikam flameshot kdepim kdepim-addons neochat rhythmbox scribus scribus-doc scribus-template shotwell simplescreenrecorder syncthing syncthing-gtk transmission transmission-{remote-gtk,gtk,qt} telegram-desktop uget vlc yakuake
+
+echo "Package installation completed."
+    sleep 3
+
+echo "Installing utilites for different file system access"
 # Support for additional file systems:
-filesystem_packages=(
-    btrfs-progs exfatprogs f2fs-tools hfsprogs hfsplus jfsutils lvm2 nilfs-tools
-    reiserfsprogs reiser4progs udftools xfsprogs disktype
-)
 
-filesystem_explanations=(
-    "btrfs-progs        Tools for managing Btrfs file systems."
-    "disktype           Detects the content format of a disk or disk image."
-    "exfatprogs         Utilities for exFAT file system."
-    "f2fs-tools         Utilities for Flash-Friendly File System (F2FS)."
-    "hfsplus            Tools for HFS+ file system."
-    "hfsprogs           Tools for HFS and HFS+ file systems."
-    "jfsutils           Utilities for JFS (Journaled File System)."
-    "lvm2               Logical Volume Manager 2 utilities."
-    "nilfs-tools        Tools for NILFS (New Implementation of a Log-structured File System)."
-    "reiser4progs       Tools for Reiser4 file system."
-    "reiserfsprogs      Tools for ReiserFS file system."
-    "udftools           Tools for UDF (Universal Disk Format) file system."
-    "xfsprogs           Tools for managing XFS file systems."
-)
+    sudo apt install -y --install-recommends btrfs-progs exfatprogs f2fs-tools hfsprogs hfsplus hfsutils jfsutils lvm2 nilfs-tools reiserfsprogs reiser4progs udftools xfsprogs disktype apfs-dkms apfsprogs libfsapfs-utils libfsapfs1 exfat-fuse
 
-echo "The following packages will be installed:"
-for ((i = 0; i < ${#filesystem_packages[@]}; i++)); do
-    echo "- ${filesystem_explanations[i]}"
-done
+echo "Installation completed."
+    sleep 3
 
-echo
-read -p "Do you want to proceed with the installation? (y/n): " choice
-
-if [[ $choice =~ ^[Yy]$ ]]; then
-    echo "Installing the packages..."
-    sudo apt install -y --install-recommends "${filesystem_packages[@]}"
-    echo "Package installation completed."
-else
-    echo "Package installation skipped."
-fi
 
     # Install firmware for AMD GPU
     sudo apt update

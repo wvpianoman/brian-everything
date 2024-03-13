@@ -1,0 +1,58 @@
+E: Unable to locate package akonadi
+E: Unable to locate package akonadi-calendar-tools
+
+E: Unable to locate package cjson
+E: Unable to locate package crontabs
+E: Unable to locate package dbus-glib
+
+E: Unable to locate package ffmpeg-libs
+
+E: Unable to locate package google-noto-emoji-color-fonts
+E: Unable to locate package gstreamer1-libav
+E: Unable to locate package gstreamer1-vaapi
+E: Unable to locate package gstreamer1-plugins-bad-free
+E: Unable to locate package gstreamer1-plugins-bad-free-extras
+E: Unable to locate package gstreamer1-plugins-good
+E: Unable to locate package gstreamer1-plugins-good-extras
+E: Unable to locate package gstreamer1-plugins-ugly
+E: Unable to locate package gstreamer1-plugins-ugly-free
+E: Unable to locate package gtk-murrine-engine
+E: Unable to locate package gtk2-immodule-xim
+E: Unable to locate package gtk3-immodule-xim
+E: Unable to locate package intel-media-driver
+E: Unable to locate package iptables-services
+
+E: Unable to locate package libavcodec-free
+E: Unable to locate package libavcodec-freeworld
+E: Unable to locate package libffi
+E: Unable to locate package libffi-devel
+E: Unable to locate package libfreeaptx
+E: Unable to locate package libfreeaptx-tools
+E: Unable to locate package libgcab1
+E: Unable to locate package librabbitmq
+E: Unable to locate package librabbitmq-tools
+E: Unable to locate package librist
+E: Unable to locate package libsodium
+E: Unable to locate package libsodium-devel
+E: Unable to locate package libva-intel-driver
+E: Unable to locate package libvdpau
+E: Unable to locate package libvdpau-va-gl
+E: Unable to locate package libXext
+
+E: Unable to locate package llvm16-libs
+E: Unable to locate package lpcnetfreedv
+
+E: Unable to locate package mbedtls
+E: Unable to locate package mesa-libGL-devel
+E: Unable to locate package mesa-libGLU-devel
+E: Unable to locate package mesa-libd3d-devel
+E: Unable to locate package mesa-filesystem
+E: Unable to locate package mesa-libEGL
+E: Unable to locate package mesa-libGL
+E: Unable to locate package mesa-libGLw
+E: Unable to locate package mesa-libGLU
+E: Unable to locate package mesa-libglapi
+E: Unable to locate package mesa-libOpenCL
+E: Unable to locate package mesa-libOSMesa
+
+Package installation completed.
