@@ -5,9 +5,6 @@ The following software is being installed on the system:
     acl                               Access control list utilities for file permissions management.
     aria2                             High speed download utility
     attr                              Tools for managing extended attributes on filesystems.
-    blender                           Very fast and versatile 3D modeller/renderer
-    blender-data                      Very fast and versatile 3D modeller/renderer - data pack
-    boomaga                           virtual printer for viewing a document before printing
     btop                              Modern and colorful command line resource monitor that shows usage and stats
     cifs-utils                        Utilities for mounting and managing CIFS/SMB file systems.
     cookietool                        suite of programs to help maintain a fortune database
@@ -21,20 +18,14 @@ The following software is being installed on the system:
     ffmpegthumbnailer                 Lightweight video thumbnailer.
     figlet                            Make large character ASCII banners out of ordinary text
     firmware-realtek                  Firmware files for Realtek WiFi cards.
-    flameshot                         Powerful yet simple to use screenshot software.
     flatpak                           Application sandboxing and distribution framework.
     font-manager                      font management application for the GNOME desktop
     fonts-powerline                   prompt and statusline utility (symbols font)
     fortune-mod                       provides fortune cookies on demand
     fortunes                          Data files containing fortune cookies
-    fortunes-bofh-excuses             Description: BOFH excuses for fortune
-    fortunes-debian-hints             Debian Hints for fortune
     fortunes-min                      Data files containing selected fortune cookies
     gdebi                             Simple tool for installing deb packages.
     gedit                             popular text editor for the GNOME desktop environment
-    gimp                              GNU Image Manipulation Program
-    gimp-help-en                      Documentation for GIMP (English)
-    gnome-software-plugin-flatpak     GNOME Software plugin for Flatpak integration.
     grep                              GNU grep. egrep and fgrep
     grub-customizer                   GUI to configure GRUB2 and BURG
     gstreamer1.0-libav                GStreamer plugins for the libav codec library.
@@ -42,56 +33,41 @@ The following software is being installed on the system:
     gstreamer1.0-plugins-ugly         GStreamer plugins from the 'ugly' set.
     gstreamer1.0-tools                Tools for GStreamer multimedia framework.
     gstreamer1.0-vaapi                GStreamer plugins for video decoding/encoding using VA-API.
-    inkscape                          vector-based drawing program
     kdegraphics-thumbnailers          Graphics file format thumbnailers for KDE.
-    krita                             pixel-based image manipulation program
     libavcodec-extra                  Extra multimedia codecs for libavcodec.
     lsd                               ls command with a lot of pretty colors and some other stuff
     meld                              graphical tool to diff and merge files
-    neochat                           Matrix client for desktop and mobile made by KDE
     neofetch                          Fast, highly customizable system info script.
     ntp                               Network Time Protocol daemon and utility programs.
     ntpdate                           Client for setting system time from NTP servers.
-    nvidia-detect                     NVIDIA GPU detection utility.
     p7zip-rar                         RAR support for p7zip.
     pandoc                            general markup converter
     plasma-discover-backend-flatpak   Flatpak backend for Plasma Discover.
     plasma-discover-backend-fwupd     Discover software management suite - fwupd backend
-    plasma-discover-backend-snap      Discover software management suite - Snap backend
     plocate                           Fast filesystem search tool.
     powertop                          diagnose issues with power consumption and management
     python3-setproctitle              Allow customization of the process title.
     rar                               Archive manager for RAR files.
     rclone                            rsync for commercial cloud storage
     rclone-browser                    Simple cross platform GUI for rclone
-    rhythmbox                         Music player and organizer for GNOME.
     ripgrep                           recursively searches your current directory for a regex
     rygel                             GNOME UPnP/DLNA services
-    scribus                           Open Source Desktop Page Layout
-    scribus-doc                       Documentation for Scribus
-    scribus-template                  additional scribus templates
     shotwell                          Digital Photo Organizer
-    simplescreenrecorder              Feature-rich screen recorder for X11 and OpenGL
-    simplescreenrecorder              Screen recorder for Linux.
     snmp                              SNMP (Simple Network Management Protocol) applications.
     sntp                              Simple Network Time Protocol (SNTP) client.
     software-properties-common        Software properties common utilities.
     sxiv                              simple X image viewer
     synaptic                          Graphical package manager for apt.
-    telegram-desktop                  fast and secure mnessaging application
     terminator                        Multiple GNOME terminals in one window.
     tlp                               feature-rich command-line utility, saving laptop battery power
     tlp-rdw                           TLP Radio device wizard providing event based switching of bluetooth, NFC, Wi-Fi and WWAN
     tlpui                             GUI for easy TLP configuration
-    transmission                      Lightweight BitTorrent Client
-    transmission-{remote-gtk,gtk,qt}  Lightweight BitTorrent Client (GTK+ & QT Interface)
     ttf-mscorefonts-installer         Installer for Microsoft TrueType core fonts.
     tumbler-plugins-extra             Additional plugins for the tumbler thumbnail rendering service.
     uget                              easy-to-use download manager written in GTK+
     ugrep                             faster grep with an interactive query GUI
     unrar                             Extract files from RAR archives.
     variety                           Wallpaper changer, downloader and manager
-    vlc                               Multimedia player and streaming server.
     wsdd                              Python Web Services Discovery Daemon, Windows Net Browsing
 
 **Software Packages:**
@@ -115,6 +91,7 @@ The following software is being installed on the system:
     shotwell                          Digital Photo Organizer
     simplescreenrecorder              Feature-rich screen recorder for X11 and OpenGL
     syncthing                         Continuous File Synchronization
+    telegram-desktop                  fast and secure mnessaging application
     transmission                      Lightweight BitTorrent Client
     transmission-{remote-gtk,gtk,qt}  Lightweight BitTorrent Client (GTK+ & QT Interface)
     uget                              easy-to-use download manager written in GTK+
