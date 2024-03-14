@@ -20,17 +20,17 @@
 
     echo "Installing the packages..."
 
-sudo apt install -y --install-recommends acl akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils libcjson1 codec2 cowsay cron curl gir1.2-dbusglib-1.0 dconf-editor dialog direnv
+sudo apt install -y --install-recommends acl akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils libcjson1 codec2 cookietoolcowsay cron curl gir1.2-dbusglib-1.0 dconf-editor dialog direnv
 
-sudo apt install -y --install-recommends dnsutils dolphin-plugins duf earlyoom easyeffects espeak espeak-ng fancontrol mbpfan fd-find ffmpeg ffmpegthumbnailer ffmpegthumbs figlet flatpak fortune-mod git gnome-font-viewer gnupg2 fonts-noto-color-emoji grep grub-customizer
+sudo apt install -y --install-recommends dnsutils dolphin-plugins duf earlyoom easyeffects espeak espeak-ng fancontrol mbpfan fd-find ffmpeg ffmpegthumbnailer ffmpegthumbs figlet firmware-realtek flatpak fortune-mod fortunes fortunes-min gdebi gedit git gnupg2 fonts-noto-color-emoji grep grub-customizer
 
-sudo apt install -y --install-recommends gstreamer1.0-{libav,vaapi} gstreamer1.0-plugins-{bad,base,good,rtp,ugly} gtk2-engines-murrine murrine-themes uim-gtk{2.0,3} uim-gtk{2.0,3}-immodule uim-qt5 uim-qt5-immodule gtk2-engines haveged htop ibus-gtk4 intel-media-va-driver iptables jq
+sudo apt install -y --install-recommends gstreamer1.0-{libav,vaapi} gstreamer1.0-plugins-{bad,base,good,rtp,ugly} gtk2-engines-murrine murrine-themes uim-gtk{2.0,3} uim-gtk{2.0,3}-immodule uim-qt5 uim-qt5-immodule gtk2-engines haveged ibus-gtk4 intel-media-va-driver iptables jq
 
 sudo apt install -y --install-recommends kate kdegraphics-thumbnailers kdepim libavcodec-extra libffi8 libffi-dev libfreeaptx0 libgc1 librabbitmq4 librabbitmq-dev librist4 libsodium23 libsodium-dev libtool libvdpau1 libvdpau-va-gl1 libxext6 llvm-16 lsd make meld libegl1-mesa
 
 sudo apt install -y --install-recommends libgl{u,w}1-mesa mesa-va-drivers mesa-vulkan-drivers ublock-origin-doc webext-ublock-origin-firefox mpg123 nano neofetch neovim neovim-qt snmpd net-tools nftables openssh-{client,server} ostree p7zip p7zip-full p7zip-rar packagekit pandoc pip
 
-sudo apt install -y --install-recommends pipewire-audio pipewire-doc pkg-config plasma-discover-backend-{flatpak,fwupd} plasma-firewall plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode rclone rclone-browser ripgrep rsync rygel sassc screen socat sshpass sxiv
+sudo apt install -y --install-recommends pipewire-audio pipewire-doc pkg-config plasma-discover-backend-{flatpak,fwupd} plasma-firewall plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat sshpass sxiv
 
 sudo apt install -y --install-recommends tar terminator thefuck tlp tlp-rdw tlpui tumbler tumbler-plugins-extra ufw ugrep un{zip,rar} unrar-free variety vim virt-manager wget wsdd xclip xfonts-100dpi zip systemd-zram-generator zramswap-sysvinit-compat zram-tools zstd
 
@@ -49,7 +49,7 @@ sudo systemctl enable --now earlyoom
 
 echo "Installiong Software Packages"
 
-sudo apt install -y --install-recommends blender blender-data gimp gimp-help-en krita inkscape boomaga digikam flameshot kdepim kdepim-addons neochat rhythmbox scribus scribus-doc scribus-template shotwell simplescreenrecorder syncthing syncthing-gtk transmission transmission-{remote-gtk,gtk,qt} telegram-desktop uget vlc yakuake
+sudo apt install -y --install-recommends blender blender-data gimp gimp-help-en krita inkscape boomaga digikam flameshot kdepim kdepim-addons neochat rclone rclone-browser rhythmbox scribus scribus-doc scribus-template shotwell simplescreenrecorder syncthing syncthing-gtk telegram-desktop uget vlc yakuake
 
 echo "Package installation completed."
     sleep 3
@@ -124,7 +124,7 @@ else
 fi
 
 # Installing fonts
-sudo apt install fonts-font-awesome
+sudo apt install fonts-font-awesome fonts-noto-color-emoji
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
 sudo unzip FiraCode.zip -d /usr/share/fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
