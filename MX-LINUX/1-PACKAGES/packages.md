@@ -1,4 +1,4 @@
-**Essential Packiages**
+# **Essential Packages:**
 
     acl                             Access control list utilities for file permissions management
     akonadi-import-wizard           PIM data import wizard
@@ -149,7 +149,7 @@
     zramswap-sysvinit-compat
     zstd
 
-**My Applications**
+# **My Applications:**
 
     blender                     Very fast and versatile 3D modeller/renderer
     blender-data 
@@ -178,7 +178,7 @@
     vlc                         Multimedia player and streaming server.
     yakuake                     A drop-down terminal emulator
 
-**Filesystem Access:**
+# **Filesystem Access:**
 
     apfs-dkms                   APFS module for linux, with experimental write support
     apfsprogs                   experimental APFS tools for Linux
