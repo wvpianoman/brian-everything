@@ -54,46 +54,46 @@
     haveged                         Linux entropy source using the HAVEGE algorithm
     ibus-gtk4                       Intelligent Input Bus - GTK4 support
     intel-media-va-driver           VAAPI driver for the Intel GEN8+ Graphics family
-    iptables
-    jq
-    kate
+    iptables                        administration tools for packet filtering and NAT
+    jq                              lightweight and flexible command-line JSON processor
+    kate                            powerful text editor
     kdegraphics-thumbnailers        Graphics file format thumbnailers for KDE
     libavcodec-extra                Extra multimedia codecs for libavcodec
-    libcjson1
-    libegl1-mesa
-    libffi-dev
-    libffi8
-    libfreeaptx0
-    libgc1
-    libgl{u,w}1-mesa
-    librabbitmq-dev
-    librabbitmq4
-    librist4
-    libsodium-dev
-    libsodium23
-    libtool
-    libvdpau-va-gl1
-    libvdpau1
-    libxext6
-    llvm-16
+    libcjson1                       Ultralightweight JSON parser in ANSI C
+    libffi-dev                      Foreign Function Interface library (development files)
+    libffi8                         Foreign Function Interface library runtime
+    libfreeaptx0                    Free implementation of aptX
+    libgc1                          conservative garbage collector for C and C++
+    libgl{u,w}1-mesa                Mesa OpenGL utility library (GLU)
+    libglw1-mesa                    GL widget library for Athena and Motif -- runtime
+    librabbitmq-dev                 AMQP client library written in C - Dev Files
+    librabbitmq4                    AMQP client library written in C
+    librist4                        Reliable Internet Stream Transport -- shared library
+    libsodium-dev                   Network communication, cryptography and signaturing library - headers
+    libsodium23                     Network communication, cryptography and signaturing library
+    libtool                         Generic library support script
+    libvdpau-va-gl1                 VDPAU driver with OpenGL/VAAPI backend
+    libvdpau1                       Video Decode and Presentation API for Unix (libraries)
+    libxext6                        X11 miscellaneous extension library
+    llvm-16                         Modular compiler and toolchain technologies
     lsd                             ls command with a lot of pretty colors and some other stuff
-    make
-    mbpfan
+    make                            utility for directing compilation
+    mbpfan                          fan control daemon for Apple Macbooks
     meld                            graphical tool to diff and merge files
-    mesa-va-drivers
-    mesa-vulkan-drivers
-    mpg123
-    murrine-themes
-    nano
+    mesa-va-drivers                 Mesa VA-API video acceleration drivers
+    mesa-vulkan-drivers             Mesa Vulkan graphics drivers
+    mpg123                          MPEG layer 1/2/3 audio player
+    murrine-themes                  themes for gtk2 murrine engine
+    nano                            small, friendly text editor inspired by Pico
     neofetch                        Fast, highly customizable system info script
-    neovim
-    neovim-qt
-    net-tools
-    nftables
-    openssh-{client,server}
-    ostree
-    p7zip
-    p7zip-full
+    neovim                          heavily refactored vim fork focused on modern code and features
+    neovim-qt                       neovim client library and Qt5 GUI
+    net-tools                       NET-3 networking toolkit
+    nftables                        Program to control packet filtering rules by Netfilter project
+    openssh-{client,server}         Secure shell (SSH) client & server, for secure access to remote machines
+    ostree                          content-addressed filesystem for operating system binaries
+    p7zip                           7zr file archiver with high compression ratio
+    p7zip-full                      7z and 7za file archivers with high compression ratio
     p7zip-rar                       RAR support for p7zip
     packagekit
     pandoc                          general markup converter
