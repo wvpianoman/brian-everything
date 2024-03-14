@@ -95,13 +95,13 @@
     p7zip                           7zr file archiver with high compression ratio
     p7zip-full                      7z and 7za file archivers with high compression ratio
     p7zip-rar                       RAR support for p7zip
-    packagekit
+    packagekit                      Provides a package management service
     pandoc                          general markup converter
-    pipewire-audio
-    pipewire-doc
-    pkg-config
+    pipewire-audio                  recommended set of PipeWire packages for a standard audio desktop use
+    pipewire-doc                    libraries for the PipeWire multimedia server - documentation
+    pkg-config                      manage compile and link flags for libraries (transitional package)
     plasma-discover-backend         Plasma Discover backend for flatpak and fwupd
-    plasma-firewall
+    plasma-firewall                 Plasma configuration module for firewalls
     plocate                         Fast filesystem search tool
     powertop                        diagnose issues with power consumption and management
     pulseeffects
