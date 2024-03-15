@@ -104,31 +104,31 @@
     plasma-firewall                 Plasma configuration module for firewalls
     plocate                         Fast filesystem search tool
     powertop                        diagnose issues with power consumption and management
-    pulseeffects
-    python3
-    python3-pip
+    pulseeffects                    Audio effects for PulseAudio applications
+    python3                         interactive high-level object-oriented language
+    python3-pip                     Python package installer
     python3-setproctitle            Allow customization of the process title
-    qrencode
+    qrencode                        QR Code encoder into PNG image
     ripgrep                         recursively searches your current directory for a regex
-    rsync
+    rsync                           fast, versatile, remote (and local) file-copying tool
     rygel                           GNOME UPnP/DLNA services
-    sassc
-    screen
+    sassc                           C/C++ port of the Sass CSS precompiler - command-line tool
+    screen                          terminal multiplexer with VT100/ANSI terminal emulation
     snmpd                           SNMP (Simple Network Management Protocol) applications
-    socat
-    sshpass
+    socat                           multipurpose relay for bidirectional data transfer
+    sshpass                         Non-interactive ssh password authentication
     sxiv                            simple X image viewer
-    systemd-zram-generator
-    tar
-    terminator
-    thefuck
+    systemd-zram-generator          Systemd unit generator for zram devices
+    tar                             GNU version of the tar archiving utility
+    terminator                      multiple GNOME terminals in one window
+    thefuck                         pelling corrector of console commands
     tlp                             feature-rich command-line utility, saving laptop battery power
     tlp-rdw                         TLP Radio device wizard providing event based switching of bluetooth, NFC, Wi-Fi and WWAN
     tlpui                           GUI for easy TLP configuration
-    tumbler
+    tumbler                         D-Bus thumbnailing service
     tumbler-plugins-extra           Additional plugins for the tumbler thumbnail rendering service
-    ublock-origin-doc
-    ufw
+    ublock-origin-doc               lightweight and efficient ads, malware, trackers blocker (docs)
+    ufw                             program for managing a Netfilter firewall
     ugrep                           faster grep with an interactive query GUI
     uim-gtk{2.0,3}
     uim-gtk{2.0,3}-immodule
@@ -145,9 +145,9 @@
     xclip
     xfonts-100dpi
     zip
-    zram-tools
-    zramswap-sysvinit-compat
-    zstd
+    zram-tools                      utilities for working with zram
+    zramswap-sysvinit-compat        sysvinit script for zramswap from zram-tools
+    zstd                            fast lossless compression algorithm -- CLI tool
 
 # **My Applications:**
 
