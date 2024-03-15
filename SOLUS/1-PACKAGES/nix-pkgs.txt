@@ -1,4 +1,3 @@
-nix-env -iA nixpkgs.neo-cowsay
 nix-env -iA nixpkgs.cowsay
 nix-env -iA nixpkgs.direnv
 nix-env -iA nixpkgs.fanctl
@@ -8,4 +7,4 @@ nix-env -iA nixpkgs.haveged
 nix-env -iA nixpkgs.apfs-fuse
 nix-env -iA nixpkgs.gum
 
-pkgs.neo-cowsay pkgs.cowsay pkgs.direnv pkgs.fanctl pkgs.figlet pkgs.fortune pkgs.haveged pkgs.apfs-fuse pkgs.gum
+nix-env -iA nixpkgs.cowsay nixpkgs.direnv nixpkgs.fanctl nixpkgs.figlet nixpkgs.fortune nixpkgs.haveged nixpkgs.apfs-fuse nixpkgs.gum
