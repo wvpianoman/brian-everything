@@ -32,7 +32,7 @@ sudo apt install -y --install-recommends libgl{u,w}1-mesa mesa-va-drivers mesa-v
 
 sudo apt install -y --install-recommends pipewire-{audio,doc} pkg-config plasma-discover-backend-{flatpak,fwupd} plasma-firewall plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat sshpass sxiv
 
-sudo apt install -y --install-recommends tar terminator thefuck tlp tlp-rdw tlpui tumbler tumbler-plugins-extra ufw ugrep un{zip,rar} unrar-free variety vim virt-manager wget wsdd xclip xfonts-100dpi zip systemd-zram-generator zramswap-sysvinit-compat zram-tools zstd
+sudo apt install -y --install-recommends tar terminator thefuck tlp tlp-rdw tlpui tumbler tumbler-plugins-extra ufw ugrep un{zip,rar} unrar-free variety vim virt-manager wget wsdd xclip zip systemd-zram-generator zramswap-sysvinit-compat zram-tools zstd
 
 echo "Package installation completed."
     sleep 3
@@ -124,7 +124,7 @@ else
 fi
 
 # Installing fonts
-sudo apt install fonts-font-awesome fonts-noto-color-emoji
+sudo apt install fonts-font-awesome fonts-noto-color-emoji xfonts-100dpi
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
 sudo unzip FiraCode.zip -d /usr/share/fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip

@@ -130,20 +130,17 @@
     ublock-origin-doc               lightweight and efficient ads, malware, trackers blocker (docs)
     ufw                             program for managing a Netfilter firewall
     ugrep                           faster grep with an interactive query GUI
-    uim-gtk{2.0,3}
-    uim-gtk{2.0,3}-immodule
-    uim-qt5
-    uim-qt5-immodule
-    un{zip,rar}
-    unrar-free
+    uim-gtk{2.0,3}                  Universal Input Method - GTK+2.x & GTK+3.x front end & IM-Module
+    uim-qt5                         Universal Input Method - Qt 5.x front end & IM-module
+    un{zip,rar}                     Unarchiver for .zip files
+    unrar                           Unarchiver for .rar files (free & non-free version)
     variety                         Wallpaper changer, downloader and manager
-    vim
+    vim                             Vi IMproved - enhanced vi editor
     virt-manager
     webext-ublock-origin-firefox
     wget
     wsdd                            Python Web Services Discovery Daemon, Windows Net Browsing
     xclip
-    xfonts-100dpi
     zip
     zram-tools                      utilities for working with zram
     zramswap-sysvinit-compat        sysvinit script for zramswap from zram-tools
@@ -152,7 +149,7 @@
 # **My Applications:**
 
     blender                     Very fast and versatile 3D modeller/renderer
-    blender-data 
+    blender-data                Very fast and versatile 3D modeller/renderer - data package
     boomaga                     virtual printer for viewing a document before printing
     digikam                     A digital camera accessing & photo management application
     flameshot                   Powerful yet simple to use screenshot software.
@@ -172,7 +169,7 @@
     shotwell                    Digital Photo Organizer
     simplescreenrecorder        Feature-rich screen recorder for X11 and OpenGL
     syncthing                   Continuous File Synchronization
-    syncthing-gtk 
+    syncthing-gtk               GTK3-based GUI and notification area icon for syncthing
     telegram-desktop            fast and secure mnessaging application
     uget                        easy-to-use download manager written in GTK+
     vlc                         Multimedia player and streaming server.
