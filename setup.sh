@@ -43,7 +43,7 @@ if [ -f /etc/debian_version ]; then
     echo -e "\e[34mDebian-based distribution detected.\e[0m"  # Blue color
     echo ""
 #    install_debian_packages "${ubuntu_packages[@]}"
-    ( exec "$HOME/GitHub/brian-everything/MX-Linux/1-PACKAGES/1-PKGS.sh" )
+    ( exec "$HOME/GitHub/brian-everything/MX-LINUX/1-PACKAGES/1-PKGS.sh" )
 elif [ -f /etc/redhat-release ]; then
     echo ""
     echo -e "\e[34mFedora-based distribution detected.\e[0m"  # Blue color

@@ -104,7 +104,6 @@
     plasma-firewall                 Plasma configuration module for firewalls
     plocate                         Fast filesystem search tool
     powertop                        diagnose issues with power consumption and management
-    pulseeffects                    Audio effects for PulseAudio applications
     python3                         interactive high-level object-oriented language
     python3-pip                     Python package installer
     python3-setproctitle            Allow customization of the process title
