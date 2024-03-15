@@ -136,12 +136,12 @@
     unrar                           Unarchiver for .rar files (free & non-free version)
     variety                         Wallpaper changer, downloader and manager
     vim                             Vi IMproved - enhanced vi editor
-    virt-manager
-    webext-ublock-origin-firefox
-    wget
+    virt-manager                    desktop application for managing virtual machines
+    webext-ublock-origin            lightweight and efficient ads, malware, trackers blocker (Firefox & Chromium)
+    wget                            retrieves files from the web
     wsdd                            Python Web Services Discovery Daemon, Windows Net Browsing
-    xclip
-    zip
+    xclip                           command line interface to X selections
+    zip                             Archiver for .zip files
     zram-tools                      utilities for working with zram
     zramswap-sysvinit-compat        sysvinit script for zramswap from zram-tools
     zstd                            fast lossless compression algorithm -- CLI tool

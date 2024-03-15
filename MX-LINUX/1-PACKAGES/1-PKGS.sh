@@ -32,7 +32,7 @@ sudo apt install -y --install-recommends libgl{u,w}1-mesa mesa-va-drivers mesa-v
 
 sudo apt install -y --install-recommends pipewire-{audio,doc} pkg-config plasma-discover-backend-{flatpak,fwupd} plasma-firewall plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat sshpass sxiv
 
-sudo apt install -y --install-recommends tar terminator thefuck tlp tlp-rdw tlpui tumbler tumbler-plugins-extra ufw ugrep un{zip,rar} unrar-free variety vim virt-manager wget wsdd xclip zip systemd-zram-generator zramswap-sysvinit-compat zram-tools zstd
+sudo apt install -y --install-recommends tar terminator thefuck tlp tlp-rdw tlpui tumbler tumbler-plugins-extra ufw ugrep un{zip,rar} unrar-free variety vim virt-manager webext-ublock-origin-chromium wget wget2 wsdd xclip zip systemd-zram-generator zramswap-sysvinit-compat zram-tools zstd
 
 echo "Package installation completed."
     sleep 3
