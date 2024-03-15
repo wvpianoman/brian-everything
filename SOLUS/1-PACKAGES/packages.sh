@@ -16,11 +16,6 @@
 #
 # https://patorjk.com/software/taag/#p=display&c=bash&f=ANSI%20Shadow&t=Solus%20Pkgs
 
-# install eopkg 3rd aprty
-pip3 install eopkg3p
-
-# install 3rd party apps
-eopkg3p install gitkraken teamviewer
 
 # Support for additional file systems:
 filesystem_packages=(
@@ -183,5 +178,10 @@ EOF
 
 }
 
+# install eopkg 3rd aprty
+sudo pip3 install eopkg3p
+
+# install 3rd party apps
+eopkg3p install gitkraken teamviewer
 
 
