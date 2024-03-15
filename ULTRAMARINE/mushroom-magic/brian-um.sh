@@ -280,54 +280,7 @@ check_error() {
 	fi
 }
 
-# Function to configure faster updates in DNF
-configure_dnf() {
-	# Define the path to the DNF configuration file
-	DNF_CONF_PATH="/etc/dnf/dnf.conf"
 
-	display_message "[${GREEN}✔${NC}]  Configuring faster updates in DNF..."
-
-	# Check if the file exists before attempting to edit it
-	if [ -e "$DNF_CONF_PATH" ]; then
-		# Backup the original configuration file
-		sudo cp "$DNF_CONF_PATH" "$DNF_CONF_PATH.bak"
-
-		# Use sudo to edit the DNF configuration file with nano
-		sudo nano "$DNF_CONF_PATH" <<EOL
-[main]
-best=False
-clean_requirements_on_remove=True
-color=always
-countme=False
-deltarpm=true
-fastestmirror=True
-gpgcheck=True
-install_weak_deps=False
-installonly_limit=5
-keepcache=True
-max_parallel_downloads=10
-metadata_expire=6h
-metadata_expire_filter=repo:base:2h
-metadata_expire_filter=repo:updates:12h
-metadata_timer_sync=0
-skip_if_unavailable=True
-
-# Exclude all nvidia-*, dont want anything later then 535x
-exclude=akmod-nvidia*3:545* nvidia-modprobe*3:545* nvidia-persistenced*3:545* nvidia-settings*3:545* nvidia-xconfig*3:545* xorg-x11-drv-nvidia-cuda-libs*3:545* xorg-x11-drv-nvidia-cuda*3:545* xorg-x11-drv-nvidia-kmodsrc*3:545* xorg-x11-drv-nvidia-libs*3:545* xorg-x11-drv-nvidia-power*3:545* xorg-x11-drv-nvidia*3:545*
-EOL
-
-		# Inform the user that the update is complete
-		display_message "[${GREEN}✔${NC}] DNF configuration updated for faster updates."
-		sudo dnf install -y fedora-workstation-repositories
-		sudo dnf update && sudo dnf makecache
-	else
-		# Inform the user that the configuration file doesn't exist
-		display_message "[${RED}✘${NC}] Error: DNF configuration file not found at $DNF_CONF_PATH."
-		check_error
-		gum spin --spinner dot --title "Stand-by..." -- sleep 3
-	fi
-
-}
 
 # Install new dnf5
 dnf5() {
@@ -371,21 +324,7 @@ change_hotname() {
 	gum spin --spinner dot --title "Stand-by..." -- sleep 2
 }
 
-# Function to install RPM Fusion
-install_rpmfusion() {
-	display_message "Installing RPM Fusion repositories..."
 
-	sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-		https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-	sudo dnf install rpmfusion-free-release-tainted
-	sudo dnf install rpmfusion-nonfree-release-tainted
-	sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
-	sudo dnf groupupdate core
-
-	check_error
-
-	display_message "RPM Fusion installed successfully."
-}
 
 # Function to update the system
 update_system() {
@@ -663,16 +602,6 @@ enable_modern_standby() {
 	gum spin --spinner dot --title "Stand-by..." -- sleep 2
 }
 
-# Function to enable nvidia-modeset
-enable_nvidia_modeset() {
-	display_message "Enabling nvidia-modeset..."
-
-	# Enable nvidia-modeset
-	sudo grubby --update-kernel=ALL --args="nvidia-drm.modeset=1"
-
-	display_message "[${GREEN}✔${NC}]  nvidia-modeset enabled successfully."
-	gum spin --spinner dot --title "Stand-by..." -- sleep 2
-}
 
 # Function to disable NetworkManager-wait-online.service
 disable_network_manager_wait_online() {
