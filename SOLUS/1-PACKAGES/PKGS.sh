@@ -1,22 +1,6 @@
 #!/bin/bash
 ### #!/usr/bin/env bash
 
-# Brian Francisco
-# Personal use case packages
-# Jan 20 2024
-
-#   《˘ ͜ʖ ˘》
-#
-#  ███╗   ███╗██╗  ██╗    ██╗     ██╗███╗   ██╗██╗   ██╗██╗  ██╗    ██████╗ ██╗  ██╗ ██████╗ ███████╗
-#  ████╗ ████║╚██╗██╔╝    ██║     ██║████╗  ██║██║   ██║╚██╗██╔╝    ██╔══██╗██║ ██╔╝██╔════╝ ██╔════╝
-#  ██╔████╔██║ ╚███╔╝     ██║     ██║██╔██╗ ██║██║   ██║ ╚███╔╝     ██████╔╝█████╔╝ ██║  ███╗███████╗
-#  ██║╚██╔╝██║ ██╔██╗     ██║     ██║██║╚██╗██║██║   ██║ ██╔██╗     ██╔═══╝ ██╔═██╗ ██║   ██║╚════██║
-#  ██║ ╚═╝ ██║██╔╝ ██╗    ███████╗██║██║ ╚████║╚██████╔╝██╔╝ ██╗    ██║     ██║  ██╗╚██████╔╝███████║
-#  ╚═╝     ╚═╝╚═╝  ╚═╝    ╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝
-#
-#https://patorjk.com/software/taag/#p=display&c=bash&f=ANSI%20Shadow&t=MX%20Linux%20Pkgs
-
-# Install some software:
 
     echo "Installing the packages..."
 
@@ -49,7 +33,7 @@ sudo systemctl enable --now earlyoom
 
 echo "Installiong Software Packages"
 
-sudo apt install -y --install-recommends blender blender-data ghostwriter gimp gimp-help-en krita inkscape boomaga digikam flameshot kdepim kdepim-addons neochat rclone rclone-browser rhythmbox scribus scribus-doc scribus-template shotwell simplescreenrecorder syncthing syncthing-gtk telegram-desktop uget vlc yakuake
+sudo apt install -y --install-recommends blender blender-data gimp gimp-help-en krita inkscape boomaga digikam flameshot kdepim kdepim-addons neochat rclone rclone-browser rhythmbox scribus scribus-doc scribus-template shotwell simplescreenrecorder syncthing syncthing-gtk telegram-desktop uget vlc yakuake
 
 echo "Package installation completed."
     sleep 3

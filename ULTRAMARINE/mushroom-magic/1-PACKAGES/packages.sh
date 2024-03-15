@@ -105,7 +105,7 @@ echo "Package installation completed."
 
 echo "Installiong Software Packages"
 
-sudo dnf install -y blender boomaga digikam flameshot gimp gimp-help gimp-data-extras inkscape kdepim kdepim-addons krita neochat rhythmbox scribus shotwell
+sudo dnf install -y blender boomaga digikam flameshot ghostwriter gimp gimp-help gimp-data-extras inkscape kdepim kdepim-addons krita neochat rhythmbox scribus shotwell
 
 sudo dnf install -y simplescreenrecorder syncthing transmission transmission-{remote-gtk,gtk,qt} uget vlc yakuake
 

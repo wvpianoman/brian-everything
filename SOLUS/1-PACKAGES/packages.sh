@@ -53,7 +53,7 @@ fi
 
 ############################################
 
-sudo eopkg it -y shotwell transmission blender gimp gimp-help gimp-docs krita scribus scribus-docs telegram vlc inkscape inkscape-docs discord fastfetch variety libreoffice-all rclone rclone-browser vscode apostrophe pandoc grep ripgrep ripgrep-all meld gum kdiff3 tlp thermald
+sudo eopkg it -y shotwell transmission blender ghostwriter gimp gimp-help gimp-docs krita scribus scribus-docs telegram vlc inkscape inkscape-docs discord fastfetch variety libreoffice-all rclone rclone-browser vscode apostrophe pandoc grep ripgrep ripgrep-all meld gum kdiff3 tlp thermald
 
 
 #####################################
@@ -74,7 +74,7 @@ sudo systemctl status thermald.service
 	[ -f /usr/bin/easyeffects ] && [ -f $HOME/.config/easyeffects/output/default.json ] && easyeffects -l default
 	[ -f /usr/bin/pulseeffects ] && [ -f $HOME/.config/PulseEffects/output/default.json ] && pulseeffects -l default
 
-	sudo eopkg it -y packagekit dconf-editor digikam duf espeak-ng gedit gnome-font-viewer grub-customizer kate libffi-devel lsd mpg123 neofetch openssl-devel p7zip rhythmbox rygel sshpass sxiv zstd fd fzf lsd sshfs-fuse rsync openssh-server openssh wsdd virt-manager wget xclip neofetch nano btop zip un{zip,rar} tar ffmpegthumbnailer tumbler sassc font-noto-cjk gtk2-engine-murrine curl openssh libva-intel-driver intel-media-driver easyeffects pulseeffects
+	sudo eopkg it -y packagekit dconf-editor digikam duf espeak-ng gedit gnome-font-viewer grub-customizer kate libffi-devel lsd mpg123 neofetch openssl-devel p7zip rhythmbonix-env -iA nixpkgs.neo-cowsay nixpkgs.cowsay nixpkgs.direnv nixpkgs.fanctl nixpkgs.figlet nixpkgs.fortune nixpkgs.haveged nixpkgs.apfs-fuse nixpkgs.gumx rygel sshpass sxiv zstd fd fzf lsd sshfs-fuse rsync openssh-server openssh wsdd virt-manager wget xclip neofetch nano btop zip un{zip,rar} tar ffmpegthumbnailer tumbler sassc font-noto-cjk gtk2-engine-murrine curl openssh libva-intel-driver intel-media-driver easyeffects pulseeffects
 
 	# Execute rygel to start DLNA sharing
 	/usr/bin/rygel-preferences

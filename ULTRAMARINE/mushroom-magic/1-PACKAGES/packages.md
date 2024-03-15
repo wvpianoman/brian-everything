@@ -187,7 +187,8 @@ The following software is being installed on the system:
     blender                           Very fast and versatile 3D modeller/renderer
     boomaga                           virtual printer for viewing a document before printing
     digikam                           A digital camera accessing & photo management application
-    flameshot                         Powerful yet simple to use screenshot software.
+    flameshot                         Powerful yet simple to use screenshot software
+    ghostwriter                       Distraction-free, themable Markdown Editor
     gimp                              GNU Image Manipulation Program
     gimp-help                         Documentation for GIMP (English)
     gimp-data-extras                  Extra files for GIMP
