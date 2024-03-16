@@ -1664,21 +1664,22 @@ display_main_menu() {
 	clear
 	echo -e "\n                  Brian's online Fedora updater\n"
 	echo -e "\e[34m|----| \e[33m Main Menu \e[34m |---------------------------------------------------------------------------------------------------------------------|\e[0m"
-	echo -e " "
-	echo -e " "
+	echo -e "\e[34m---------------------------------------------------------------------------------------------------------------------------------------------------------\e[0m"
+	echo -e "\e[34m---------------------------------------------------------------------------------------------------------------------------------------------------------\e[0m"
 	echo -e "\e[33m 3.\e[0m \e[32m Update the system                                            ( Create meta cache etc )\e[0m"
 	echo -e "\e[33m 4.\e[0m \e[32m Install firmware updates                                     ( Not compatible with all systems )\e[0m"
 	echo -e "\e[33m 5.\e[0m \e[32m Install AMD GPU drivers                                      ( Auto scan and install )\e[0m"
 	echo -e "\e[33m 6.\e[0m \e[32m Optimize battery life\e[0m"
 	echo -e "\e[33m 7.\e[0m \e[32m Install multimedia codecs\e[0m"
 	echo -e "\e[33m 8.\e[0m \e[32m Install H/W Video Acceleration for AMD or Intel\e[0m"
-	echo -e " "
+	echo -e "\e[34m---------------------------------------------------------------------------------------------------------------------------------------------------------\e[0m"
 	echo -e "\e[33m 10.\e[0m \e[32mSet UTC Time\e[0m"
 	echo -e "\e[33m 11.\e[0m \e[32mDisable mitigations\e[0m"
 	echo -e "\e[33m 12.\e[0m \e[32mEnable Modern Standby\e[0m"
-	echo -e " "
-	echo -e " "
-	echo -e " "
+	echo -e "\e[34m---------------------------------------------------------------------------------------------------------------------------------------------------------\e[0m"
+	echo -e "\e[33m 9.\e[0m \e[32m Update Flatpak\e[0m"
+	echo -e "\e[33m 9.\e[0m \e[32m Cleanup unused/removed Flatpak\e[0m"
+	echo -e "\e[34m---------------------------------------------------------------------------------------------------------------------------------------------------------\e[0m"
 	echo -e "\e[33m 16.\e[0m \e[32mChange hostname                                              ( Change current localname/pc name )\e[0m"
 	echo -e "\e[33m 17.\e[0m \e[32mCheck mitigations=off in GRUB\e[0m"
 	echo -e "\e[33m 18.\e[0m \e[32mInstall additional apps\e[0m"
@@ -1686,8 +1687,8 @@ display_main_menu() {
 	echo -e "\e[33m 20.\e[0m \e[32mFix Chrome HW accelerations issue                            ( No guarantee )\e[0m"
 	echo -e "\e[33m 21.\e[0m \e[32mDisplay XDG session\e[0m"
 	echo -e "\e[33m 22.\e[0m \e[32mFix grub or rebuild grub                                     ( Checks and enables menu output to grub menu )\e[0m"
-	echo -e " "
-	echo -e " "
+	echo -e "\e[34m---------------------------------------------------------------------------------------------------------------------------------------------------------\e[0m"
+	echo -e "\e[34m---------------------------------------------------------------------------------------------------------------------------------------------------------\e[0m"
 	echo -e "\e[33m 25.\e[0m \e[32mPerform BTRFS balance and scrub operation on / partition     ( !! WARNING, backup important data incase, 5 min operation )\e[0m"
 	echo -e "\e[33m 26.\e[0m \e[32mCreate extra hidden dir in HOME                                "
 	echo -e "\e[33m 27.\e[0m \e[32mModify systemd timeout settings to 10s                         "
@@ -1729,7 +1730,8 @@ handle_user_input() {
 	11) disable_mitigations ;;
 	12) enable_modern_standby ;;
 	13)  ;;
-	14)  ;;
+	14) update_flatpak ;;
+	15) cleanup_flatpak_cruft ;;
 	15)  ;;
 	16) change_hotname ;;
 	17) check_mitigations_grub ;;
