@@ -18,7 +18,7 @@
 
 # Install some software:
 
-    echo "Installing the packages..."
+    echo "Installing essential packages..."
 
 sudo apt install -y --install-recommends acl akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils libcjson1 codec2 cookietool cowsay cron curl gir1.2-dbusglib-1.0 dconf-editor dialog direnv
 
@@ -33,6 +33,25 @@ sudo apt install -y --install-recommends libgl{u,w}1-mesa mesa-va-drivers mesa-v
 sudo apt install -y --install-recommends pipewire-{audio,doc} pkg-config plasma-discover-backend-{flatpak,fwupd} plasma-firewall plocate powertop python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat sshpass sxiv
 
 sudo apt install -y --install-recommends tar terminator thefuck tlp tlp-rdw tlpui tumbler tumbler-plugins-extra ufw ugrep un{zip,rar} unrar-free variety vim virt-manager webext-ublock-origin-chromium wget wget2 wsdd xclip zip systemd-zram-generator zramswap-sysvinit-compat zram-tools zstd
+
+read -n 1 -r -s -p $'Press enter to continue...\n'
+
+# Install Universal Package Managment Tool and Make Dependencies
+# https://itsfoss.com/upt/      and     https://crates.io/crates/upt?ref=itsfoss.com
+echo "Installing UPT - Universal Package management Tool"
+
+sudo apt install -y --install-recommends gcc make rustup
+
+### After installing rustup, don’t forget to add $HOME/.cargo/bin to your PATH.
+
+### If you’re using Bash as shell (usually the default shell), you have to add the following line to ~/.bash_profile:
+
+### export PATH $HOME/.cargo/bin:$PATH
+
+### If your shell is Zsh, you can add the same line above to ~/.zshrc instead. Don’t forget to reload the shell.
+
+sudo rustup default stable
+sudo cargo install upt
 
 echo "Package installation completed."
     sleep 3

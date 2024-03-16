@@ -100,6 +100,31 @@ sudo dnf install -y plocate powertop pulseeffects python3 python3-pip python3-se
 
 sudo dnf install -y tlpi tumbler tumbler-extras ufw ufw-kde ugrep un{zip,rar} unrar-free variety vim virt-manager wget wsdd xclip xorg-x11-fonts-ISO8859-1-100dpi zip zram zram-generator zram-generator-defaults zstd
 
+read -n 1 -r -s -p $'Press enter to continue...\n'
+
+# Install Universal Package Managment Tool and Make Dependencies
+# https://itsfoss.com/upt/      and     https://crates.io/crates/upt?ref=itsfoss.com
+echo "Installing UPT - Universal Package management Tool"
+
+sudo yum install -y  gcc make rustup
+
+### After installing rustup, don’t forget to add $HOME/.cargo/bin to your PATH.
+
+### If you’re using Bash as shell (usually the default shell), you have to add the following line to ~/.bash_profile:
+
+### export PATH $HOME/.cargo/bin:$PATH
+
+### If your shell is Zsh, you can add the same line above to ~/.zshrc instead. Don’t forget to reload the shell.
+
+curl https://sh.rustup.rs -sSf | sh
+
+. "$HOME/.cargo/env"
+
+sudo rustup default stable
+
+sudo cargo install upt
+
+
 echo "Package installation completed."
     sleep 3
 
