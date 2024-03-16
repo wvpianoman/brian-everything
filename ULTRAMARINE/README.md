@@ -9,3 +9,4 @@ Some of the inclusions are:
 ~ flatpak {stable & beta}
 ~ small tweaks to speed up networks, samba, etc
 
+Fedora is a great distro, and Ultramarine applies tweaks that just makes it better, for my use.
