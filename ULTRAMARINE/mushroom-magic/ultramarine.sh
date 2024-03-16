@@ -282,27 +282,7 @@ check_error() {
 
 
 
-# Install new dnf5
-dnf5() {
-	# Ask the user if they want to install dnf5
-	display_message "${GREEN}=>${NC} Beta: DNF5 for fedora 40/41 testing"
-	read -p "Do you want to install dnf5? (y/n): " install_dnf5
-	if [[ $install_dnf5 =~ ^[Yy]$ ]]; then
-		sudo dnf install dnf5 -y
-		sudo dnf5 install dnf5 dnf5-plugins
-		sudo dnf5 update && sudo dnf5 makecache
-	#	sudo dnf5 distro-sync --releasever=39 --refresh --disablerepo rawhide \
-	#		--enablerepo fedora --allowerasing --best
-		display_message "${GREEN}=>${NC} Beta: DNF5 installed"
-		echo -e "In order to use dnf5, you need to use ${YELLOW}==>${NC} ${GREEN} sudo dnf5 update${NC}"
-		gum spin --spinner dot --title "Stand-by..." -- sleep 5
-	else
-		display_message "[${RED}✘${NC}] DNF5 installation error !"
-		echo "Aborted installation of dnf5. Returning to the main menu."
-		gum spin --spinner dot --title "Stand-by..." -- sleep 3
-	fi
 
-}
 
 # Change Hostname
 change_hotname() {
@@ -457,23 +437,7 @@ optimize_battery() {
 	fi
 }
 
-# Function to install multimedia codecs, old fedora hacks to meet new standards (F39)
-install_multimedia_codecs() {
-	display_message "[${GREEN}✔${NC}]  Installing multimedia codecs..."
 
-	sudo dnf groupupdate -y 'core' 'multimedia' 'sound-and-video' --setopt='install_weak_deps=False' --exclude='PackageKit-gstreamer-plugin' --allowerasing && sync
-	sudo dnf swap -y 'ffmpeg-free' 'ffmpeg' --allowerasing
-	sudo dnf install -y gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel ffmpeg gstreamer-ffmpeg
-	sudo dnf install -y lame\* --exclude=lame-devel
-	sudo dnf group upgrade --with-optional Multimedia -y
-
-	# Enable support for Cisco OpenH264 codec
-	sudo dnf config-manager --set-enabled fedora-cisco-openh264 -y
-	sudo dnf install gstreamer1-plugin-openh264 mozilla-openh264 -y
-
-	display_message "[${GREEN}✔${NC}]  Multimedia codecs installed successfully."
-	gum spin --spinner dot --title "Stand-by..." -- sleep 2
-}
 
 # Function to install H/W Video Acceleration for AMD or Intel chipset
 install_hw_video_acceleration_amd_or_intel() {
@@ -1700,21 +1664,21 @@ display_main_menu() {
 	clear
 	echo -e "\n                  Brian's online Fedora updater\n"
 	echo -e "\e[34m|----| \e[33m Main Menu \e[34m |---------------------------------------------------------------------------------------------------------------------|\e[0m"
-	echo -e "\e[33m 1.\e[0m \e[32m Configure faster updates in DNF\e[0m"
-	echo -e "\e[33m 2.\e[0m \e[32m Install RPM Fusion repositories\e[0m"
+	echo -e " "
+	echo -e " "
 	echo -e "\e[33m 3.\e[0m \e[32m Update the system                                            ( Create meta cache etc )\e[0m"
 	echo -e "\e[33m 4.\e[0m \e[32m Install firmware updates                                     ( Not compatible with all systems )\e[0m"
 	echo -e "\e[33m 5.\e[0m \e[32m Install AMD GPU drivers                                      ( Auto scan and install )\e[0m"
 	echo -e "\e[33m 6.\e[0m \e[32m Optimize battery life\e[0m"
 	echo -e "\e[33m 7.\e[0m \e[32m Install multimedia codecs\e[0m"
 	echo -e "\e[33m 8.\e[0m \e[32m Install H/W Video Acceleration for AMD or Intel\e[0m"
-	echo -e "\e[33m 9.\e[0m \e[32m Update Flatpak\e[0m"
+	echo -e " "
 	echo -e "\e[33m 10.\e[0m \e[32mSet UTC Time\e[0m"
 	echo -e "\e[33m 11.\e[0m \e[32mDisable mitigations\e[0m"
 	echo -e "\e[33m 12.\e[0m \e[32mEnable Modern Standby\e[0m"
-	echo -e "\e[33m 13.\e[0m \e[32;9m[9mEnable nvidia-modeset\e[0m"
-	echo -e "\e[33m 14.\e[0m \e[32;9mDisable NetworkManager-wait-online.service\e[0m"
-	echo -e "\e[33m 15.\e[0m \e[32;9mDisable Gnome Software from Startup Apps\e[0m"
+	echo -e " "
+	echo -e " "
+	echo -e " "
 	echo -e "\e[33m 16.\e[0m \e[32mChange hostname                                              ( Change current localname/pc name )\e[0m"
 	echo -e "\e[33m 17.\e[0m \e[32mCheck mitigations=off in GRUB\e[0m"
 	echo -e "\e[33m 18.\e[0m \e[32mInstall additional apps\e[0m"
@@ -1722,8 +1686,8 @@ display_main_menu() {
 	echo -e "\e[33m 20.\e[0m \e[32mFix Chrome HW accelerations issue                            ( No guarantee )\e[0m"
 	echo -e "\e[33m 21.\e[0m \e[32mDisplay XDG session\e[0m"
 	echo -e "\e[33m 22.\e[0m \e[32mFix grub or rebuild grub                                     ( Checks and enables menu output to grub menu )\e[0m"
-	echo -e "\e[33m 23.\e[0m \e[32mInstall new DNF5                                             ( Testing for fedora 40/41 )\e[0m"
-	echo -e "\e[33m 24.\e[0m \e[32;9mRemove Useless KDE Apps                                      ( Why are these installed? )\e[0m"
+	echo -e " "
+	echo -e " "
 	echo -e "\e[33m 25.\e[0m \e[32mPerform BTRFS balance and scrub operation on / partition     ( !! WARNING, backup important data incase, 5 min operation )\e[0m"
 	echo -e "\e[33m 26.\e[0m \e[32mCreate extra hidden dir in HOME                                "
 	echo -e "\e[33m 27.\e[0m \e[32mModify systemd timeout settings to 10s                         "
@@ -1752,29 +1716,29 @@ handle_user_input() {
 	echo ""
 
 	case "$choice" in
-	1) configure_dnf ;;
-	2) install_rpmfusion ;;
+	1)  ;;
+	2)  ;;
 	3) update_system ;;
 	4) install_firmware ;;
 	5) install_gpu_drivers ;;
 	6) optimize_battery ;;
 	7) install_multimedia_codecs ;;
 	8) install_hw_video_acceleration_amd_or_intel ;;
-	9) update_flatpak ;;
+	9)  ;;
 	10) set_utc_time ;;
 	11) disable_mitigations ;;
 	12) enable_modern_standby ;;
-	13) enable_nvidia_modeset ;;
+	13)  ;;
 	14)  ;;
 	15)  ;;
 	16) change_hotname ;;
 	17) check_mitigations_grub ;;
-	18) install_apps ;;
+	18)  ;;
 	19) cleanup_fedora ;;
 	20) fix_chrome ;;
 	21) display_XDG_session ;;
 	22) fix_grub ;;
-	23) dnf5 ;;
+	23)  ;;
 	24)  ;;
 	25) btrfs_maint ;;
 	26) create-extra-dir ;;
