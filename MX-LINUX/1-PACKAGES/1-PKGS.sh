@@ -34,28 +34,10 @@ sudo apt install -y --install-recommends pipewire-{audio,doc} pkg-config plasma-
 
 sudo apt install -y --install-recommends tar terminator thefuck tlp tlp-rdw tlpui tumbler tumbler-plugins-extra ufw ugrep un{zip,rar} unrar-free variety vim virt-manager webext-ublock-origin-chromium wget wget2 wsdd xclip zip systemd-zram-generator zramswap-sysvinit-compat zram-tools zstd
 
-read -n 1 -r -s -p $'Press enter to continue...\n'
-
-# Install Universal Package Managment Tool and Make Dependencies
-# https://itsfoss.com/upt/      and     https://crates.io/crates/upt?ref=itsfoss.com
-echo "Installing UPT - Universal Package management Tool"
-
-sudo apt install -y --install-recommends gcc make rustup
-
-### After installing rustup, don’t forget to add $HOME/.cargo/bin to your PATH.
-
-### If you’re using Bash as shell (usually the default shell), you have to add the following line to ~/.bash_profile:
-
-### export PATH $HOME/.cargo/bin:$PATH
-
-### If your shell is Zsh, you can add the same line above to ~/.zshrc instead. Don’t forget to reload the shell.
-
-sudo rustup default stable
-sudo cargo install upt
-
 echo "Package installation completed."
     sleep 3
 
+# read -n 1 -r -s -p $'Press enter to continue...\n'
 
 #Install gum : A tool for glamorous shell scripts. https://github.com/charmbracelet/gum
 sudo mkdir -p /etc/apt/keyrings
@@ -73,6 +55,8 @@ sudo apt install -y --install-recommends blender blender-data ghostwriter gimp g
 echo "Package installation completed."
     sleep 3
 
+# read -n 1 -r -s -p $'Press enter to continue...\n'
+
 echo "Installing utilites for different file system access"
 # Support for additional file systems:
 
@@ -81,15 +65,12 @@ echo "Installing utilites for different file system access"
 echo "Installation completed."
     sleep 3
 
+# read -n 1 -r -s -p $'Press enter to continue...\n'
 
     # Install firmware for AMD GPU
     sudo apt update
     sudo apt install firmware-amd-graphics -y
     echo "AMD GPU firmware installed successfully."
-
-
-
-#################################################################################
 
 # Check GPU information
 gpu_info=$(lspci | grep -i 'VGA\|3D')

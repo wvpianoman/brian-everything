@@ -23,52 +23,6 @@
 
 # clear
 
-# Function to install packages using apt package manager (debian)
-#  install_debian_packages() {
-#     local software_packages=("$@")
-#     echo "The following packages will be installed:"
-#     for ((i = 0; i < ${#software_packages[@]}; i++)); do
-#         echo "- ${software_packages[i]}"
-#         echo "Explanation: ${software_explanations[i]}"
-#         sleep 3
-#     done
-#
-#      read -p "Do you want to proceed with the installation? (y/n): " choice
-#
-#     if [[ $choice =~ ^[Yy]$ ]]; then
-#         echo "Installing the packages using apt..."
-#         sudo apt install -y --install-recommends "${software_packages[@]}"
-#         echo "Package installation completed."
-#     else
-#         echo "Package installation skipped."
-#     fi
-# }
-
-# Function to install packages using Solus package manager
-# install_solus_packages() {
-#     local software_packages=("$@")
-#     echo "The following packages will be installed:"
-#     for ((i = 0; i < ${#software_packages[@]}; i++)); do
-#         echo "- ${software_packages[i]}"
-#         echo "Explanation: ${software_explanations[i]}"
-#         sleep 3
-#     done
-#
-#     read -p "Do you want to proceed with the installation? (y/n): " choice
-#
-#     if [[ $choice =~ ^[Yy]$ ]]; then
-#         echo "Installing the packages using eopkg..."
-#         sudo eopkg install -y "${software_packages[@]}"
-#         echo "Package installation completed."
-#     else
-#         echo "Package installation skipped."
-#     fi
-# }
-
-# Function to install packages using fedora package manager
-# install_fedora_packages() {
-#     local software_packages=("$@")
-
 echo "Installing RPM Fusion Repositories"
 
 	# Install Apps
@@ -81,6 +35,8 @@ echo "Installing RPM Fusion Repositories"
 	sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 
 sleep 3
+
+# read -n 1 -r -s -p $'Press enter to continue...\n'
 
 echo "Installing Essential Software Packages"
 
@@ -100,33 +56,15 @@ sudo dnf install -y plocate powertop pulseeffects python3 python3-pip python3-se
 
 sudo dnf install -y tlpi tumbler tumbler-extras ufw ufw-kde ugrep un{zip,rar} unrar-free variety vim virt-manager wget wsdd xclip xorg-x11-fonts-ISO8859-1-100dpi zip zram zram-generator zram-generator-defaults zstd
 
-read -n 1 -r -s -p $'Press enter to continue...\n'
+sleep 3
 
-# Install Universal Package Managment Tool and Make Dependencies
-# https://itsfoss.com/upt/      and     https://crates.io/crates/upt?ref=itsfoss.com
-echo "Installing UPT - Universal Package management Tool"
-
-sudo yum install -y  gcc make rustup
-
-### After installing rustup, don’t forget to add $HOME/.cargo/bin to your PATH.
-
-### If you’re using Bash as shell (usually the default shell), you have to add the following line to ~/.bash_profile:
-
-### export PATH $HOME/.cargo/bin:$PATH
-
-### If your shell is Zsh, you can add the same line above to ~/.zshrc instead. Don’t forget to reload the shell.
-
-curl https://sh.rustup.rs -sSf | sh
-
-. "$HOME/.cargo/env"
-
-sudo rustup default stable
-
-sudo cargo install upt
-
+# read -n 1 -r -s -p $'Press enter to continue...\n'
 
 echo "Package installation completed."
-    sleep 3
+
+sleep 3
+
+# read -n 1 -r -s -p $'Press enter to continue...\n'
 
 echo "Installiong Software Packages"
 
@@ -135,39 +73,23 @@ sudo dnf install -y blender boomaga digikam flameshot ghostwriter gimp gimp-help
 sudo dnf install -y simplescreenrecorder syncthing transmission transmission-{remote-gtk,gtk,qt} uget vlc yakuake
 
 echo "Package installation completed."
-    sleep 3
+
+sleep 3
+
+# read -n 1 -r -s -p $'Press enter to continue...\n'
 
 echo "Installing utilites for different file system access"
 
 sudo dnf install -y apfs-fuse btrfs-progs disktype exfatprogs f2fs-tools fuse-sshfs hfsutils hfsplus-tools jfsutils lvm2 nilfs-utils ntfs-3g udftools xfsprogs
 
 echo "Package installation completed."
-    sleep 3
-# }
+
+sleep 3
+
+# read -n 1 -r -s -p $'Press enter to continue...\n'
 
 sudo dnf install earlyoom
 sudo systemctl enable --now earlyoom
-
-# Check distribution type (Debian, Fedora or Solus) and call respective function from above
-# if [ -f /etc/debian_version ]; then
-#     echo""
-#     echo -e "\e[34mDebian-based distribution detected.\e[0m"  # Blue color
-#     echo""
-#     install_debian_packages "${software_packages[@]}"
-# elif [ -f /etc/redhat-release ]; then
-#     echo""
-#     echo -e "\e[34mFedora-based distribution detected."
-#     echo ""
-#     install_fedora_packages "${software_packages[@]}"
-# elif [ -f /usr/bin/eopkg ]; then
-#     echo""
-#     echo -e "\e[34mSolus-based distribution detected.\e[0m"  # Blue color
-#     echo""
-#     install_solus_packages "${software_packages[@]}"
-# else
-#     echo "Unsupported distribution."
-# fi
-
 
 # Installing fonts
 sudo dnf install curl cabextract xorg-x11-font-utils fontconfig -y
