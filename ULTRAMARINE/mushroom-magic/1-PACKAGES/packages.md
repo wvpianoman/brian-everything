@@ -47,7 +47,6 @@ The following software is being installed on the system:
     ffmpegthumbs                      KDE ffmpegthumbnailer service
     figlet                            Make large character ASCII banners out of ordinary text
     flatpak                           Application sandboxing and distribution framework.
-    font-manager                      font management application for the GNOME desktop
     fortune-mod                       provides fortune cookies on demand
     fzf                               A command-line fuzzy finder written in Go
     git                               Fast Version Control System
