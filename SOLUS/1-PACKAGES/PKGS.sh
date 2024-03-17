@@ -4,7 +4,7 @@
 
     echo "Installing the packages..."
 
-sudo apt install -y --install-recommends acl akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils libcjson1 codec2 cookietool cowsay cron curl gir1.2-dbusglib-1.0 dconf-editor dialog direnv
+sudo eopkg install -y acl akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi **cifs-utils libcjson1 codec2 cookietool cowsay cron curl gir1.2-dbusglib-1.0 dconf-editor dialog direnv
 
 sudo apt install -y --install-recommends dnsutils dolphin-plugins duf earlyoom easyeffects espeak espeak-ng fancontrol mbpfan fd-find ffmpeg ffmpegthumbnailer ffmpegthumbs figlet firmware-realtek flatpak fortune-mod fortunes fortunes-min gdebi gedit git gnupg2 fonts-noto-color-emoji grep grub-customizer
 
