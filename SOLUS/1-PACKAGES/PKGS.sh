@@ -4,9 +4,9 @@
 
     echo "Installing the packages..."
 
-sudo eopkg install -y acl akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi **cifs-utils libcjson1 codec2 cookietool cowsay cron curl gir1.2-dbusglib-1.0 dconf-editor dialog direnv
+sudo eopkg install -y acl akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi   curl dialog
 
-sudo apt install -y --install-recommends dnsutils dolphin-plugins duf earlyoom easyeffects espeak espeak-ng fancontrol mbpfan fd-find ffmpeg ffmpegthumbnailer ffmpegthumbs figlet firmware-realtek flatpak fortune-mod fortunes fortunes-min gdebi gedit git gnupg2 fonts-noto-color-emoji grep grub-customizer
+sudo apt install -y --install-recommends dolphin-plugins duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer ffmpegthumbs figlet firmware-realtek flatpak fortune-mod fortunes fortunes-min gdebi gedit git gnupg2 fonts-noto-color-emoji grep grub-customizer
 
 sudo apt install -y --install-recommends gstreamer1.0-{libav,vaapi} gstreamer1.0-plugins-{bad,base,good,rtp,ugly} gtk2-engines-murrine murrine-themes uim-gtk{2.0,3} uim-gtk{2.0,3}-immodule uim-qt5 uim-qt5-immodule gtk2-engines haveged ibus-gtk4 intel-media-va-driver iptables jq
 
@@ -21,19 +21,13 @@ sudo apt install -y --install-recommends tar terminator thefuck tlp tlp-rdw tlpu
 echo "Package installation completed."
     sleep 3
 
-
-#Install gum : A tool for glamorous shell scripts. https://github.com/charmbracelet/gum
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
-echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
-sudo apt update && sudo apt install gum
-
-sudo apt install earlyoom
-sudo systemctl enable --now earlyoom
+##  possibly nix
+#
+# cifs-utils libcjson1 codec2 cookietool cowsay cron gir1.2-dbusglib-1.0 dconf-editor direnv dnsutils fancontrol mbpfan
 
 echo "Installiong Software Packages"
 
-sudo apt install -y --install-recommends blender blender-data gimp gimp-help-en krita inkscape boomaga digikam flameshot kdepim kdepim-addons neochat rclone rclone-browser rhythmbox scribus scribus-doc scribus-template shotwell simplescreenrecorder syncthing syncthing-gtk telegram-desktop uget vlc yakuake
+sudo eopkg install -y  blender gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam ghostwriter flameshot kdepim kdepim-addons neochat rclone rclone-browser rhythmbox scribus scribus-doc shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc yakuake
 
 echo "Package installation completed."
     sleep 3
@@ -41,7 +35,8 @@ echo "Package installation completed."
 echo "Installing utilites for different file system access"
 # Support for additional file systems:
 
-    sudo apt install -y --install-recommends btrfs-progs exfatprogs f2fs-tools hfsprogs hfsplus hfsutils jfsutils lvm2 nilfs-tools reiserfsprogs reiser4progs udftools xfsprogs disktype apfs-dkms apfsprogs libfsapfs-utils libfsapfs1 exfat-fuse
+    sudo eopkg install -y  btrfs-progs exfatprogs f2fs-tools lvm2 reiserfsprogs udftools xfsprogs disktype
+    ( exfat-fuse hfsprogs hfsplus hfsutils jfsutils nilfs-tools reiser4progs apfs-dkms apfsprogs libfsapfs-utils libfsapfs1 )
 
 echo "Installation completed."
     sleep 3
@@ -49,7 +44,7 @@ echo "Installation completed."
 
     # Install firmware for AMD GPU
     sudo apt update
-    sudo apt install firmware-amd-graphics -y
+    sudo eopkg install -y linux-firmware xorg-driver-video-amdgpu
     echo "AMD GPU firmware installed successfully."
 
 
