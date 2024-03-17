@@ -35,7 +35,7 @@ fi
 if ! command -v flatpak &>/dev/null; then
     echo "Flatpak is not installed.  We're going to install flatpak first."
     sudo aptitude install -y flatpak
-    sleep 5
+    sleep 3
 fi
 
 # Add Flathub repository if not already added

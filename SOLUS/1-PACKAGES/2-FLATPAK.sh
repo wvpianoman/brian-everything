@@ -32,9 +32,11 @@ if [[ ! "$choice" =~ ^[Yy]$ ]]; then
 fi
 
 # Check if Flatpak is installed
+# Check if Flatpak is installed
 if ! command -v flatpak &>/dev/null; then
-    echo "Flatpak is not installed. Please install Flatpak and run the script again."
-    sleep 10
+    echo "Flatpak is not installed.  We're going to install flatpak first."
+    sudo eopkg install -y flatpak
+    sleep 3
 fi
 
 # Add Flathub repository if not already added
@@ -188,39 +190,39 @@ EOF
 
 # Define an array of Flatpak application IDs
 flatpak_apps=(
-
 #    "com.anydesk.Anydesk"
 #    "org.blender.Blender"
 #    "com.sindresorhus.Caprine"
-    "com.jgraph.drawio.desktop"
 #    "com.discordapp.Discord"
+    "com.jgraph.drawio.desktop"
+    "one.ablaze.floorp"
 #    "org.gimp.GIMP"
+#    "com.google.Chrome"
+    "com.google.ChromeDev"
+    "com.microsoft.EdgeDev"
+#    "io.github.wereturtle.ghostwriter"
 #    "org.inkscape.Inkscape"
 #    "org.kde.krita"
-#    "nz.mega.MEGAsync"
-    "org.onlyoffice.desktopeditors"
+#    "org.libreoffice.LibreOffice"
 #    "net.scribus.Scribus"
 #    "org.gnome.Shotwell"
 #    "me.kozec.syncthingtk"
 #    "com.github.zocker_160.SyncThingy"
+#    "com.transmissionbt.Transmission"
+#    "io.github.shiftey.Desktop"
+    "org.onlyoffice.desktopeditors"
 #    "org.telegram.desktop"
 #    "org.telegram.desktop.webview"
-#    "com.transmissionbt.Transmission"
-    "com.wps.Office"
-#    "io.github.shiftey.Desktop"
 #    "org.videolan.VLC"
-
-#    "com.google.Chrome"
-    "com.google.ChromeDev"
-    "com.microsoft.EdgeDev"
-    "one.ablaze.floorp"
-
+    "com.wps.Office"
 )
 
 # Install applications
 for app in "${flatpak_apps[@]}"; do
     flatpak install -y flathub "$app"
 done
+
+flatpak install flathub-beta thunderbird
 
 echo -e "\e[1;32m[✔]\e[0m Checking updates for installed flatpak programs...\n"
 flatpak update -y

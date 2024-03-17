@@ -33,8 +33,9 @@ fi
 
 # Check if Flatpak is installed
 if ! command -v flatpak &>/dev/null; then
-    echo "Flatpak is not installed. Please install Flatpak and run the script again."
-    sleep 10
+    echo "Flatpak is not installed.  We're going to install flatpak first."
+    sudo dnf install -y flatpak
+    sleep 3
 fi
 
 # Add Flathub repository if not already added
