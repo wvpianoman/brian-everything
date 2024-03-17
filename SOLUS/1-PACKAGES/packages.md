@@ -39,7 +39,6 @@
     fortune-mod                     provides fortune cookies on demand
     fortunes                        Data files containing fortune cookies
     fortunes-min                    Data files containing selected fortune cookies
-    gdebi                           Simple tool for installing deb packages
     git                             fast, scalable, distributed revision control system
     gnupg2                          a free PGP replacement for secure communication and data storage
     grep                            GNU grep. egrep and fgrep
