@@ -8,9 +8,9 @@ sudo eopkg install -y acl akonadi-import-wizard aria2 attr autoconf automake bas
 
 sudo eopkg install -y dolphin-plugins duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer ffmpegthumbs rtl8852bu flatpak git gnupg noto-sans-ttf grep grub-customizer
 
-sudo apt install -y --install-recommends gstreamer1.0-{libav,vaapi} gstreamer1.0-plugins-{bad,base,good,rtp,ugly} gtk2-engines-murrine murrine-themes uim-gtk{2.0,3} uim-gtk{2.0,3}-immodule uim-qt5 uim-qt5-immodule gtk2-engines haveged ibus-gtk4 intel-media-va-driver iptables jq
+sudo eopkg install -y gstreamer1.0-{libav,vaapi} gstreamer1.0-plugins-{bad,base,good,opencv,ugly} gtk2-engines-murrine haveged ibus-gtk4 intel-media-driver iptables jq
 
-sudo apt install -y --install-recommends kate kdegraphics-thumbnailers kdepim libavcodec-extra libffi8 libffi-dev libfreeaptx0 libgc1 librabbitmq4 librabbitmq-dev librist4 libsodium23 libsodium-dev libtool libvdpau1 libvdpau-va-gl1 libxext6 llvm-16 lsd make meld libegl1-mesa
+sudo apt install -y --install-recommends kate kdegraphics-thumbnailers kdepim kdepim-addons ***libavcodec-extra libffi8 libffi-dev libfreeaptx0 libgc1 librabbitmq4 librabbitmq-dev librist4 libsodium23 libsodium-dev libtool libvdpau1 libvdpau-va-gl1 libxext6 llvm-16 lsd make meld libegl1-mesa
 
 sudo apt install -y --install-recommends libgl{u,w}1-mesa mesa-va-drivers mesa-vulkan-drivers ublock-origin-doc webext-ublock-origin-firefox mpg123 nano neofetch neovim neovim-qt snmpd net-tools nftables openssh-{client,server} ostree p7zip p7zip-full p7zip-rar packagekit pandoc pip
 
@@ -23,7 +23,7 @@ echo "Package installation completed."
 
 ##  possibly nix
 #
-# cifs-utils libcjson1 codec2 cookietool cowsay cron gir1.2-dbusglib-1.0 dconf-editor direnv dnsutils fancontrol mbpfan figlet fortune-mod fortunes fortunes-min
+# cifs-utils libcjson1 codec2 cookietool cowsay cron gir1.2-dbusglib-1.0 dconf-editor direnv dnsutils fancontrol mbpfan figlet fortune-mod fortunes fortunes-min murrine-themes uim-gtk{2.0,3} uim-gtk{2.0,3}-immodule uim-qt5 uim-qt5-immodule gtk2-engines
 
 echo "Installiong Software Packages"
 
