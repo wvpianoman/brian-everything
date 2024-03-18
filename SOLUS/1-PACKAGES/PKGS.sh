@@ -12,7 +12,7 @@ sudo eopkg install -y gstreamer1.0-{libav,vaapi} gstreamer1.0-plugins-{bad,base,
 
 sudo eopkg install -y kate kdegraphics-thumbnailers kdepim kdepim-addons libavcodec-extra libffi6 libffi-devel libfreeaptx librist libsodium libsodium-devel libtool libvdpau libvdpau-va-gl libxext llvm-15 lsd make meld
 
-sudo eopkg install -y libglu mpg123 nano neofetch neovim neovim-qt net-snmp nftables openssh-server openssh ostree p7zip packagekit pandoc pip
+sudo eopkg install -y libglu merkuro mpg123 nano neofetch neovim neovim-qt net-snmp nftables openssh-server openssh ostree p7zip packagekit pandoc pip
 
 sudo eopkg install -y pipewire kpipewire pkg-config plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv
 
@@ -20,10 +20,6 @@ sudo eopkg install -y tar terminator thefuck tlp tumbler ufw gufw un{zip,rar} va
 
 echo "Package installation completed."
     sleep 3
-
-##  possibly nix
-#
-#    net-tools
 
 echo "Installiong Software Packages"
 
@@ -39,8 +35,6 @@ echo "Installing utilites for different file system access"
 
 echo "Installation completed."
     sleep 3
-
-#################################################################################
 
 # Check GPU information
 gpu_info=$(lspci | grep -i 'VGA\|3D')
