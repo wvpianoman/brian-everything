@@ -14,16 +14,16 @@ sudo eopkg install -y kate kdegraphics-thumbnailers kdepim kdepim-addons libavco
 
 sudo eopkg install -y libglu mpg123 nano neofetch neovim neovim-qt net-snmp nftables openssh-server openssh ostree p7zip packagekit pandoc pip
 
-sudo apt install -y --install-recommends pipewire-{audio,doc} pkg-config plasma-discover-backend-{flatpak,fwup} plasma-firewall plocate powertop python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat sshpass sxiv
+sudo eopkg install -y pipewire kpipewire pkg-config plasma-firewall plocate powertop python3 python3-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv
 
-sudo apt install -y --install-recommends tar terminator thefuck tlp tlp-rdw tlpui tumbler tumbler-plugins-extra ufw ugrep un{zip,rar} unrar-free variety vim virt-manager webext-ublock-origin-chromium wget wget2 wsdd xclip zip systemd-zram-generator zramswap-sysvinit-compat zram-tools zstd
+sudo apt install -y --install-recommends tar terminator thefuck tlp tumbler ufw gufp *** un{zip,rar} unrar-free variety vim virt-manager webext-ublock-origin-chromium wget wget2 wsdd xclip zip systemd-zram-generator zramswap-sysvinit-compat zram-tools zstd
 
 echo "Package installation completed."
     sleep 3
 
 ##  possibly nix
 #
-# cifs-utils libcjson1 codec2 cookietool cowsay cron gir1.2-dbusglib-1.0 dconf-editor direnv dnsutils fancontrol mbpfan figlet fortune-mod fortunes fortunes-min murrine-themes uim-gtk{2.0,3} uim-gtk{2.0,3}-immodule uim-qt5 uim-qt5-immodule gtk2-engines libgc1 librabbitmq4 librabbitmq-dev libegl1-mesa mesa-va-drivers mesa-vulkan-drivers ublock-origin-doc webext-ublock-origin-firefox net-tools p7zip-full p7zip-rar
+# cifs-utils libcjson1 codec2 cookietool cowsay cron gir1.2-dbusglib-1.0 dconf-editor direnv dnsutils fancontrol mbpfan figlet fortune-mod fortunes fortunes-min murrine-themes uim-gtk{2.0,3} uim-gtk{2.0,3}-immodule uim-qt5 uim-qt5-immodule gtk2-engines libgc1 librabbitmq4 librabbitmq-dev libegl1-mesa mesa-va-drivers mesa-vulkan-drivers ublock-origin-doc webext-ublock-origin-firefox net-tools p7zip-full p7zip-rar plasma-discover-backend-{flatpak,fwup} tlp-rdw tlpui tumbler-plugins-extra ugrep
 
 echo "Installiong Software Packages"
 
