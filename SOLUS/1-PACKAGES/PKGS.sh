@@ -16,14 +16,14 @@ sudo eopkg install -y libglu mpg123 nano neofetch neovim neovim-qt net-snmp nfta
 
 sudo eopkg install -y pipewire kpipewire pkg-config plasma-firewall plocate powertop python3 python3-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv
 
-sudo apt install -y --install-recommends tar terminator thefuck tlp tumbler ufw gufp *** un{zip,rar} unrar-free variety vim virt-manager webext-ublock-origin-chromium wget wget2 wsdd xclip zip systemd-zram-generator zramswap-sysvinit-compat zram-tools zstd
+sudo apt install -y --install-recommends tar terminator thefuck tlp tumbler ufw gufp un{zip,rar} unrar-free variety vim virt-manager wget httpie wsdd xclip zip zram-generator zram-generator-defaults zstd
 
 echo "Package installation completed."
     sleep 3
 
 ##  possibly nix
 #
-# cifs-utils libcjson1 codec2 cookietool cowsay cron gir1.2-dbusglib-1.0 dconf-editor direnv dnsutils fancontrol mbpfan figlet fortune-mod fortunes fortunes-min murrine-themes uim-gtk{2.0,3} uim-gtk{2.0,3}-immodule uim-qt5 uim-qt5-immodule gtk2-engines libgc1 librabbitmq4 librabbitmq-dev libegl1-mesa mesa-va-drivers mesa-vulkan-drivers ublock-origin-doc webext-ublock-origin-firefox net-tools p7zip-full p7zip-rar plasma-discover-backend-{flatpak,fwup} tlp-rdw tlpui tumbler-plugins-extra ugrep
+# cifs-utils libcjson1 codec2 cookietool cowsay cron gir1.2-dbusglib-1.0 dconf-editor direnv dnsutils fancontrol mbpfan figlet fortune-mod fortunes fortunes-min murrine-themes uim-gtk{2.0,3} uim-gtk{2.0,3}-immodule uim-qt5 uim-qt5-immodule gtk2-engines libgc1 librabbitmq4 librabbitmq-dev libegl1-mesa mesa-va-drivers mesa-vulkan-drivers ublock-origin-doc webext-ublock-origin-chromium webext-ublock-origin-firefox net-tools p7zip-full p7zip-rar plasma-discover-backend-{flatpak,fwup} tlp-rdw tlpui tumbler-plugins-extra ugrep zram-tools
 
 echo "Installiong Software Packages"
 
@@ -58,37 +58,9 @@ if [[ -z $gpu_info ]]; then
     exit 1
 fi
 
-# Check if NVIDIA GPU is present
-if [[ $gpu_info =~ "NVIDIA" ]]; then
-    # Check if NVIDIA drivers are already installed
-    if nvidia-smi &>/dev/null; then
-        read -r -p "NVIDIA drivers are already installed" -t 2 -n 1 -s
-        echo "."
-    else
-        # Install NVIDIA drivers
-        sudo apt update
-        sudo apt install nvidia-driver firmware-misc-nonfree -y
-        sudo apt install -y nvidia-driver
-        sudo bash -c 'echo -e "blacklist nouveau\noptions nouveau modeset=0" >> /etc/modprobe.d/blacklist-nouveau.conf'
+# Check GPU is present
+if [[ $gpu_info =~ "AMD" ]]; then
 
-        # Path to the grub configuration file
-        grub_file="/etc/default/grub"
-
-        # Comment out the existing GRUB_CMDLINE_LINUX line
-        sed -i 's/^GRUB_CMDLINE_LINUX=/#&/' "$grub_file"
-
-        # Add the new GRUB_CMDLINE_LINUX line after the commented line
-        sed -i '/^#GRUB_CMDLINE_LINUX=/a GRUB_CMDLINE_LINUX="rhgb quiet rd.driver.blacklist=nouveau"' "$grub_file"
-
-        sudo update-grub
-
-        echo "NVIDIA drivers installed successfully."
-
-        # Run NVIDIA settings
-        sudo nvidia-settings
-    fi
-
-elif [[ $gpu_info =~ "AMD" ]]; then
     # Install firmware for AMD GPU
     sudo apt update
     sudo apt install firmware-amd-graphics -y
