@@ -4,30 +4,30 @@
 
     echo "Installing the packages..."
 
-sudo eopkg install -y acl akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi   curl dialog
+sudo eopkg install -y acl akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog
 
 sudo eopkg install -y dolphin-plugins duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer ffmpegthumbs rtl8852bu flatpak git gnupg noto-sans-ttf grep grub-customizer
 
-sudo eopkg install -y gstreamer1.0-{libav,vaapi} gstreamer1.0-plugins-{bad,base,good,opencv,ugly} gtk2-engines-murrine haveged ibus-gtk4 intel-media-driver iptables jq
+sudo eopkg install -y gstreamer1.0-{libav,vaapi} gstreamer1.0-plugins-{bad,base,good,opencv,ugly} gtk-engines gtk2-engines-murrine haveged ibus-gtk4 intel-media-driver iptables jq
 
 sudo eopkg install -y kate kdegraphics-thumbnailers kdepim kdepim-addons libavcodec-extra libffi6 libffi-devel libfreeaptx librist libsodium libsodium-devel libtool libvdpau libvdpau-va-gl libxext llvm-15 lsd make meld
 
 sudo eopkg install -y libglu mpg123 nano neofetch neovim neovim-qt net-snmp nftables openssh-server openssh ostree p7zip packagekit pandoc pip
 
-sudo eopkg install -y pipewire kpipewire pkg-config plasma-firewall plocate powertop python3 python3-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv
+sudo eopkg install -y pipewire kpipewire pkg-config plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv
 
-sudo eopkg install -y tar terminator thefuck tlp tumbler ufw gufp un{zip,rar} variety vim virt-manager wget httpie wsdd xclip zip zram-generator zram-generator-defaults zstd
+sudo eopkg install -y tar terminator thefuck tlp tumbler ufw gufw un{zip,rar} variety vim virt-manager wget httpie wsdd xclip zip zram-generator zram-generator-defaults zstd
 
 echo "Package installation completed."
     sleep 3
 
 ##  possibly nix
 #
-# cifs-utils libcjson1 codec2   cron gir1.2-dbusglib-1.0 dconf-editor  dnsutils      gtk2-engines libgc1 librabbitmq4 librabbitmq-dev libegl1-mesa mesa-va-drivers mesa-vulkan-drivers  net-tools   ugrep
+#    net-tools
 
 echo "Installiong Software Packages"
 
-sudo eopkg install -y  blender gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam ghostwriter flameshot kdepim kdepim-addons neochat rclone rclone-browser rhythmbox scribus scribus-doc shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc yakuake
+sudo eopkg install -y  blender gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam ghostwriter flameshot kdepim-addons neochat rclone rclone-browser rhythmbox scribus scribus-docs shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc yakuake
 
 echo "Package installation completed."
     sleep 3
@@ -36,18 +36,9 @@ echo "Installing utilites for different file system access"
 # Support for additional file systems:
 
     sudo eopkg install -y  btrfs-progs exfatprogs f2fs-tools lvm2 reiserfsprogs udftools xfsprogs disktype
-    ( exfat-fuse hfsprogs hfsplus hfsutils jfsutils nilfs-tools reiser4progs apfs-dkms apfsprogs libfsapfs-utils libfsapfs1 )
 
 echo "Installation completed."
     sleep 3
-
-
-    # Install firmware for AMD GPU
-    sudo apt update
-    sudo eopkg install -y linux-firmware xorg-driver-video-amdgpu
-    echo "AMD GPU firmware installed successfully."
-
-
 
 #################################################################################
 
@@ -62,20 +53,21 @@ fi
 if [[ $gpu_info =~ "AMD" ]]; then
 
     # Install firmware for AMD GPU
-    sudo apt update
-    sudo apt install firmware-amd-graphics -y
+    sudo eopkg update
+    sudo eopkg install -y linux-firmware xorg-driver-video-amdgpu
     echo "AMD GPU firmware installed successfully."
 
 else
     # Install video acceleration for HD Intel i965
-    sudo apt update
-    sudo apt install xserver-xorg-video-intel
-    sudo apt install -y i965-va-driver libva-drm2 libva-x11-2 vainfo
+    sudo eopkg update
+    sudo eopkg install xorg-driver-video-intel
+    sudo eopkg install -y libva-intel-driver
     echo "Video acceleration drivers installed successfully."
 fi
 
 # Installing fonts
-sudo apt install fonts-font-awesome fonts-noto-color-emoji xfonts-100dpi
+sudo eopkg install -y font-fira-ttf font-firacode-ttf
+sudo eopkg install -y font-awesome-ttf noto-sans-ttf font-adobe-100dpi
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
 sudo unzip FiraCode.zip -d /usr/share/fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
