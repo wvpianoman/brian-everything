@@ -20,7 +20,7 @@
 
 sudo eopkg install -y acl akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog dolphin-plugins duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer ffmpegthumbs
 
-sudo eopkg install -y rtl8852bu flatpak git gnupg noto-sans-ttf grep grub-customizer gstreamer1.0-{libav,vaapi} gstreamer1.0-plugins-{bad,base,good,opencv,ugly} gtk-engines gtk2-engines-murrine haveged ibus-gtk4 intel-media-driver iptables jq kate kdegraphics-thumbnailers kdepim-addons libavcodec-extra
+sudo eopkg install -y rtl8852bu flatpak git gnupg noto-sans-ttf grep grub-customizer gstreamer-1.0-libav gstreamer-1.0-plugins-{bad,base,good,opencv,ugly} gtk-engines gtk2-engine-murrine gum ibus intel-media-driver iptables jq kate kdegraphics-thumbnailers kdepim-addons
 
 sudo eopkg install -y libffi6 libffi-devel libfreeaptx librist libsodium libsodium-devel libtool libvdpau libvdpau-va-gl libxext llvm-15 lsd make meld libglu merkuro mpg123 nano neofetch neovim neovim-qt net-snmp nftables openssh-server
 
