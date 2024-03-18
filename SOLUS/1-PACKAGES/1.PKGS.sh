@@ -16,55 +16,35 @@
 #
 # https://patorjk.com/software/taag/#p=display&c=bash&f=ANSI%20Shadow&t=Solus%20Pkgs
 
-
-# Support for additional file systems:
-filesystem_packages=(
-    btrfs-progs exfatprogs f2fs-tools lvm2 reiserfsprogs udftools xfsprogs disktype ntfs-3g
-)
-
-filesystem_explanations=(
-    "btrfs-progs        Tools for managing Btrfs file systems."
-    "disktype           Detects the content format of a disk or disk image."
-    "exfatprogs         Utilities for exFAT file system."
-    "f2fs-tools         Utilities for Flash-Friendly File System (F2FS)."
-    "lvm2               Logical Volume Manager 2 utilities."
-    "ntfs-3g            Open source, driver for Windows NTFS file system"
-    "reiserfsprogs      Tools for ReiserFS file system."
-    "udftools           Tools for UDF (Universal Disk Format) file system."
-    "xfsprogs           Tools for managing XFS file systems."
-)
-
-echo "The following packages will be installed:"
-for ((i = 0; i < ${#filesystem_packages[@]}; i++)); do
-    echo "- ${filesystem_explanations[i]}"
-done
-
-echo
-read -p "Do you want to proceed with the installation? (y/n): " choice
-
-if [[ $choice =~ ^[Yy]$ ]]; then
     echo "Installing the packages..."
-    sudo eopkg install -y "${filesystem_packages[@]}"
-    echo "Package installation completed."
-else
-    echo "Package installation skipped."
-fi
 
+sudo eopkg install -y acl akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog dolphin-plugins duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer ffmpegthumbs
 
-############################################
+sudo eopkg install -y rtl8852bu flatpak git gnupg noto-sans-ttf grep grub-customizer gstreamer1.0-{libav,vaapi} gstreamer1.0-plugins-{bad,base,good,opencv,ugly} gtk-engines gtk2-engines-murrine haveged ibus-gtk4 intel-media-driver iptables jq kate kdegraphics-thumbnailers kdepim-addons libavcodec-extra
 
-sudo eopkg it -y shotwell transmission blender ghostwriter gimp gimp-help gimp-docs krita scribus scribus-docs telegram vlc inkscape inkscape-docs discord fastfetch variety libreoffice-all rclone rclone-browser vscode apostrophe pandoc grep ripgrep ripgrep-all meld gum kdiff3 tlp thermald
+sudo eopkg install -y libffi6 libffi-devel libfreeaptx librist libsodium libsodium-devel libtool libvdpau libvdpau-va-gl libxext llvm-15 lsd make meld libglu merkuro mpg123 nano neofetch neovim neovim-qt net-snmp nftables openssh-server
 
+sudo eopkg install -y openssh ostree p7zip packagekit pandoc pip pipewire kpipewire pkg-config plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv
 
-#####################################
-# sudo eopkg it -y fwupd fwupd-efi
-#####################################
+sudo eopkg install -y tar terminator thefuck tlp thermald tumbler ufw gufw un{zip,rar} variety vim virt-manager wget httpie wsdd xclip zip zram-generator zram-generator-defaults zstd
 
-	# Attempt to install firmware updates
-#	sudo fwupdmgr get-devices
-#	sudo fwupdmgr refresh --force
-#	sudo fwupdmgr get-updates
-#	sudo fwupdmgr update
+echo "Package installation completed."
+    sleep 3
+
+echo "Installiong Software Packages"
+
+sudo eopkg install -y  blender gimp gimp-help gimp-docs krita inkscape inkscape-docs boomaga digikam ghostwriter flameshot neochat rclone rclone-browser rhythmbox scribus scribus-docs shotwell simplescreenrecorder syncthing syncthing-gtk uget vlc yakuake
+
+echo "Package installation completed."
+    sleep 3
+
+echo "Installing utilites for different file system access"
+# Support for additional file systems:
+
+    sudo eopkg install -y  btrfs-progs exfatprogs f2fs-tools lvm2 reiserfsprogs udftools xfsprogs disktype
+
+echo "Installation completed."
+    sleep 3
 
 sudo systemctl start thermald.service
 sudo systemctl status thermald.service
@@ -74,7 +54,7 @@ sudo systemctl status thermald.service
 	[ -f /usr/bin/easyeffects ] && [ -f $HOME/.config/easyeffects/output/default.json ] && easyeffects -l default
 	[ -f /usr/bin/pulseeffects ] && [ -f $HOME/.config/PulseEffects/output/default.json ] && pulseeffects -l default
 
-	sudo eopkg it -y packagekit dconf-editor digikam duf espeak-ng gedit gnome-font-viewer grub-customizer kate libffi-devel lsd mpg123 neofetch openssl-devel p7zip rhythmbonix-env -iA nixpkgs.neo-cowsay nixpkgs.cowsay nixpkgs.direnv nixpkgs.fanctl nixpkgs.figlet nixpkgs.fortune nixpkgs.haveged nixpkgs.apfs-fuse nixpkgs.gumx rygel sshpass sxiv zstd fd fzf lsd sshfs-fuse rsync openssh-server openssh wsdd virt-manager wget xclip neofetch nano btop zip un{zip,rar} tar ffmpegthumbnailer tumbler sassc font-noto-cjk gtk2-engine-murrine curl openssh libva-intel-driver intel-media-driver easyeffects pulseeffects
+
 
 	# Execute rygel to start DLNA sharing
 	/usr/bin/rygel-preferences
@@ -85,26 +65,25 @@ sudo systemctl status thermald.service
 #	# sudo dnf remove profile-sync-daemon
 #	# psd profile located in $HOME/.config/psd/psd.conf
 
-	## Networking packages
-	sudo eopkg it -y iptables nftables dialog
-
-	## System utilities
-	sudo eopkg it -y bash-completion busybox ca-certs gnupg screen ufw gufw vim
-
-	## Programming and development tools
-	sudo eopkg it -y autoconf automake libtool make pkg-config
-
-	## Additional libraries and dependencies
-	sudo eopkg it -y bc binutils jq libsodium libsodium-devel qrencode socat
-
 
 	# Install some fonts
-	display_message "[${GREEN}✔${NC}]  Installing some fonts"
-	sudo eopkg it -y font-awesome-ttf powerline-fonts font-roboto-ttf
-	sudo mkdir -p ~/.local/share/fonts
-	cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf
-	wget https://github.com/tolgaerok/fonts-tolga/raw/main/WPS-FONTS.zip
-	unzip WPS-FONTS.zip -d /usr/share/fonts
+sudo eopkg install -y font-fira-ttf font-firacode-ttf
+sudo eopkg install -y font-awesome-ttf noto-sans-ttf font-adobe-100dpi
+
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
+sudo unzip FiraCode.zip -d /usr/share/fonts
+
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
+sudo unzip Meslo.zip -d /usr/share/fonts
+
+wget https://github.com/tolgaerok/fonts-tolga/raw/main/WPS-FONTS.zip
+sudo unzip WPS-FONTS.zip -d /usr/share/fonts/wps-office
+
+# Reloading Font
+sudo fc-cache -vf
+
+# Removing zip Files
+rm ./FiraCode.zip ./Meslo.zip ./WPS-FONTS.zip
 
 	zip_file="Apple-Fonts-San-Francisco-New-York-master.zip"
 
@@ -137,14 +116,6 @@ sudo systemctl status thermald.service
 		gum spin --spinner dot --title "Stand-by..." -- sleep 2
 	fi
 
-	# Reloading Font
-	sudo fc-cache -vf
-
-	# Removing zip Files
-	rm ./WPS-FONTS.zip
-	sudo fc-cache -f -v
-
-
 
 	sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tolgaerok/tolga-scripts/main/Fedora39/San-Francisco-family/San-Francisco-family.sh)"
 
@@ -175,13 +146,65 @@ EOF
 
 	display_message "${GREEN}[✔]${NC} Shutdown speed configured"
 	gum spin --spinner dot --title "Stand-by..." -- sleep 2
-
 }
 
+# Check GPU information
+gpu_info=$(lspci | grep -i 'VGA\|3D')
+if [[ -z $gpu_info ]]; then
+    echo "No GPU found."
+    exit 1
+fi
+
+# Check GPU is present
+if [[ $gpu_info =~ "AMD" ]]; then
+
+    # Install firmware for AMD GPU
+    sudo eopkg update
+    sudo eopkg install -y linux-firmware xorg-driver-video-amdgpu
+    echo "AMD GPU firmware installed successfully."
+
+else
+    # Install video acceleration for HD Intel i965
+    sudo eopkg update
+    sudo eopkg install xorg-driver-video-intel
+    sudo eopkg install -y libva-intel-driver
+    echo "Video acceleration drivers installed successfully."
+fi
+
+# Function to clear systemd journal logs
+function clear_journal_logs() {
+    sudo journalctl --vacuum-time=7d
+    echo "Systemd journal logs cleared."
+}
+
+# Lets clean up
+echo -e "\n\n----------------------------------------------"
+echo -e "|     Let's clean up                         |"
+echo -e "----------------------------------------------\n\n"
+# sudo update-grub
+sudo eopkg remove-orphans -y
+sudo eopkg clean -y
+clear_journal_logs
+remove_residual_config_files
+
 # install eopkg 3rd aprty
+echo -e "\n\n----------------------------------------------"
+echo -e "|     Installing a couple 3rd party apps     |"
+echo -e "----------------------------------------------\n\n"
 sudo pip3 install eopkg3p
 
 # install 3rd party apps
-eopkg3p install gitkraken teamviewer
+eopkg3p install gitkraken sublime-text teamviewer
 
+echo -e "\n\n----------------------------------------------"
+echo -e "|     Let's clean up your SSD                 |"
+echo -e "----------------------------------------------\n\n"
+sudo fstrim -av
 
+echo -e "\n\n----------------------------------------------"
+echo -e "|                                            |"
+echo -e "|        Setup Complete! Enjoy Solus!       |"
+echo -e "|       Please run ___________.sh            |"
+echo -e "|    to back up your APT packages and more   |"
+echo -e "|                                            |"
+echo -e "----------------------------------------------\n\n"

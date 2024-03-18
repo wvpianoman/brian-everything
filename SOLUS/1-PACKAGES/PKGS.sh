@@ -1,20 +1,15 @@
 #!/bin/bash
 ### #!/usr/bin/env bash
 
-
     echo "Installing the packages..."
 
-sudo eopkg install -y acl akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialog
+sudo eopkg install -y acl akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox perl-mozilla-ca python-certifi cjson curl dialogdolphin-plugins duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer ffmpegthumbs
 
-sudo eopkg install -y dolphin-plugins duf easyeffects espeak-ng fd findutils ffmpeg ffmpegthumbnailer ffmpegthumbs rtl8852bu flatpak git gnupg noto-sans-ttf grep grub-customizer
+sudo eopkg install -y rtl8852bu flatpak git gnupg noto-sans-ttf grep grub-customizer gstreamer1.0-{libav,vaapi} gstreamer1.0-plugins-{bad,base,good,opencv,ugly} gtk-engines gtk2-engines-murrine haveged ibus-gtk4 intel-media-driver iptables jq kate kdegraphics-thumbnailers kdepim kdepim-addons libavcodec-extra
 
-sudo eopkg install -y gstreamer1.0-{libav,vaapi} gstreamer1.0-plugins-{bad,base,good,opencv,ugly} gtk-engines gtk2-engines-murrine haveged ibus-gtk4 intel-media-driver iptables jq
+sudo eopkg install -y libffi6 libffi-devel libfreeaptx librist libsodium libsodium-devel libtool libvdpau libvdpau-va-gl libxext llvm-15 lsd make meld libglu merkuro mpg123 nano neofetch neovim neovim-qt net-snmp nftables openssh-server
 
-sudo eopkg install -y kate kdegraphics-thumbnailers kdepim kdepim-addons libavcodec-extra libffi6 libffi-devel libfreeaptx librist libsodium libsodium-devel libtool libvdpau libvdpau-va-gl libxext llvm-15 lsd make meld
-
-sudo eopkg install -y libglu merkuro mpg123 nano neofetch neovim neovim-qt net-snmp nftables openssh-server openssh ostree p7zip packagekit pandoc pip
-
-sudo eopkg install -y pipewire kpipewire pkg-config plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv
+sudo eopkg install -y openssh ostree p7zip packagekit pandoc pip pipewire kpipewire pkg-config plocate powertop python3 python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv
 
 sudo eopkg install -y tar terminator thefuck tlp tumbler ufw gufw un{zip,rar} variety vim virt-manager wget httpie wsdd xclip zip zram-generator zram-generator-defaults zstd
 
@@ -75,18 +70,6 @@ sudo fc-cache -vf
 # Removing zip Files
 rm ./FiraCode.zip ./Meslo.zip ./WPS-FONTS.zip
 
-# Function to remove residual configuration files
-function remove_residual_config_files() {
-    packages=$(dpkg -l | awk '/^rc/ { print $2 }')
-    if [ -n "$packages" ]; then
-        sudo dpkg -P $packages
-        echo "Residual configuration files removed."
-    else
-        echo "No residual configuration files found."
-    fi
-
-}
-
 # Function to clear systemd journal logs
 function clear_journal_logs() {
     sudo journalctl --vacuum-time=7d
@@ -97,9 +80,9 @@ function clear_journal_logs() {
 echo -e "\n\n----------------------------------------------"
 echo -e "|     Let's clean up                         |"
 echo -e "----------------------------------------------\n\n"
-sudo update-grub
-sudo apt-get autoremove -y
-sudo apt-get autoclean -y
+# sudo update-grub
+sudo eopkg remove-orphans -y
+sudo eopkg clean -y
 clear_journal_logs
 remove_residual_config_files
 
@@ -110,10 +93,10 @@ sudo fstrim -av
 
 echo -e "\n\n----------------------------------------------"
 echo -e "|                                            |"
-echo -e "|        Setup Complete! Enjoy debian!       |"
+echo -e "|        Setup Complete! Enjoy Solus!       |"
 echo -e "|       Please run placeholder.sh            |"
 echo -e "|    to back up your APT packages and more   |"
 echo -e "|                                            |"
 echo -e "----------------------------------------------\n\n"
 
-exit 0
+exit 2
