@@ -19,6 +19,12 @@ nix-env -iA nixpkgs.figlet
 nix-env -iA nixpkgs.fortune
 nix-env -iA nixpkgs.gum
 nix-env -iA nixpkgs.haveged
+nix-env -iA nixpkgs.codec2
+nix-env -iA nixpkgs.uim
+nix-env -iA nixpkgs.gtk-engine-murrine
+nix-env -iA nixpkgs.mbpfan
+nix-env -iA nixpkgs.p7zip
+
 
 
 # google-noto-{cjk,emoji-color}-fonts

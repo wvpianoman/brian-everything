@@ -16,14 +16,14 @@ sudo eopkg install -y libglu mpg123 nano neofetch neovim neovim-qt net-snmp nfta
 
 sudo eopkg install -y pipewire kpipewire pkg-config plasma-firewall plocate powertop python3 python3-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat sshpass sxiv
 
-sudo apt install -y --install-recommends tar terminator thefuck tlp tumbler ufw gufp un{zip,rar} unrar-free variety vim virt-manager wget httpie wsdd xclip zip zram-generator zram-generator-defaults zstd
+sudo eopkg install -y tar terminator thefuck tlp tumbler ufw gufp un{zip,rar} variety vim virt-manager wget httpie wsdd xclip zip zram-generator zram-generator-defaults zstd
 
 echo "Package installation completed."
     sleep 3
 
 ##  possibly nix
 #
-# cifs-utils libcjson1 codec2 cookietool cowsay cron gir1.2-dbusglib-1.0 dconf-editor direnv dnsutils fancontrol mbpfan figlet fortune-mod fortunes fortunes-min murrine-themes uim-gtk{2.0,3} uim-gtk{2.0,3}-immodule uim-qt5 uim-qt5-immodule gtk2-engines libgc1 librabbitmq4 librabbitmq-dev libegl1-mesa mesa-va-drivers mesa-vulkan-drivers ublock-origin-doc webext-ublock-origin-chromium webext-ublock-origin-firefox net-tools p7zip-full p7zip-rar plasma-discover-backend-{flatpak,fwup} tlp-rdw tlpui tumbler-plugins-extra ugrep zram-tools
+# cifs-utils libcjson1 codec2   cron gir1.2-dbusglib-1.0 dconf-editor  dnsutils      gtk2-engines libgc1 librabbitmq4 librabbitmq-dev libegl1-mesa mesa-va-drivers mesa-vulkan-drivers  net-tools   ugrep
 
 echo "Installiong Software Packages"
 
@@ -98,6 +98,7 @@ function remove_residual_config_files() {
     else
         echo "No residual configuration files found."
     fi
+
 }
 
 # Function to clear systemd journal logs
