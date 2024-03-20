@@ -47,7 +47,7 @@ sudo pacman -Sy firefox-ublock-origin merkuro mpg123 nano nano-syntax-highlighti
 
 sleep 2
 
-sudo pacman -Sy python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat openssl sshpass sxiv tar terminator tumbler ufw ufw-extras ugrep un{zip,rar} unrar-free variety vim virt-manager wget xclip yakuake zip zram-generator zstd
+sudo pacman -Sy python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat openssl sshpass sxiv tar terminator tumbler ufw ufw-extras ugrep un{zip,rar} unrar-free variety ventoy-bin vim virt-manager wget xclip yakuake zip zram-generator zstd
 
 sleep 2
 
