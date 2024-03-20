@@ -64,7 +64,7 @@ sleep 2
 
 echo "Installing Software Packages"
 
-sudo pacman -Sy blender digikam discord flameshot ghostwriter gimp gimp-help-en gitkraken inkscape kdepim-addons krita libreoffice-fresh neochat onlyoffice-bin rclone rhythmbox scribus shotwell simplescreenrecorder syncthing telegram-desktop transmission-{cli,remote-gtk,gtk,qt} uget wps-office vlc yakuake
+sudo pacman -Sy arcolinux-teamviewer blender digikam discord flameshot ghostwriter gimp gimp-help-en gitkraken inkscape kdepim-addons krita libreoffice-fresh neochat onlyoffice-bin rclone rhythmbox scribus shotwell simplescreenrecorder syncthing telegram-desktop transmission-{cli,remote-gtk,gtk,qt} uget wps-office vlc yakuake
 
 yay rclone-browser
 yay gimp-extras
