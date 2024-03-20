@@ -29,41 +29,45 @@
 
 echo "Installing Essential Software Packages"
 
+#wget bit.ly/get-arcolinux-keys && chmod +x ./get-arcolinux-keys  && sudo ./get-arcolinux-keys && sudo pacman -Syu archlinux-tweak-tool-git
+
 sudo pacman -Sy acl akonadi akonadi-calendar-tools akonadi-calendar akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates ca-certificates-mozilla ca-certificates-utils cifs-utils cjson codec2 cowsay curl dbus-glib dconf-editor dialog direnv
 
-sleep 1
+sleep 2
 
 sudo pacman -Sy duf earlyoom easyeffects espeak-ng fancontrol-gui-git fastfetch fd ffmpeg ffmpegthumbnailer ffmpegthumbs figlet flatpak fortune-mod git grsync gnupg grep grub-customizer gstreamer-vaapi gstreamer gtk-engine-murrine
 
-sleep 1
+sleep 2
 
-sudo pacman -Sy gtk-engines gum haveged htop intel-media-driver iptables jq kate kdegraphics-thumbnailers libffi libfreeaptx rabbitmq librist libsodium libtool libva-intel-driver libvdpau libvdpau-va-gl libxext llvm16-libs lsd make mbedtls meld
+sudo pacman -Sy gtk-engines gum haveged htop intel-media-driver iptables-nft jq kate kdegraphics-thumbnailers libffi libfreeaptx rabbitmq librist libsodium libtool libva-intel-driver libvdpau libvdpau-va-gl libxext llvm16-libs lsd make mbedtls meld
 
-sleep 1
+sleep 2
 
-sudo pacman -Sy firefox-ublock-origin merkuro mpg123 nano nano-syntax-highlighting neofetch neovim neovim-qt net-snmp net-tools nftables nsxiv openssh ostree p7zip p7zip-gui packagekit pkgconf plasma-firewall plocate powertop pulseeffects python python-pip
+sudo pacman -Sy firefox-ublock-origin merkuro mpg123 nano nano-syntax-highlighting neofetch neovim neovim-qt net-snmp net-tools nftables nsxiv openssh ostree p7zip packagekit pkgconf plasma-firewall plocate powertop python python-pip
 
-sleep 1
+sleep 2
 
-sudo pacman -Sy python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat openssl sshpass sxiv tar terminator tlp tlp-rdw
+sudo pacman -Sy python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat openssl sshpass sxiv tar terminator tumbler ufw ufw-extras ugrep un{zip,rar} unrar-free variety vim virt-manager wget xclip yakuake zip zram-generator zstd
 
-sleep 1
+sleep 2
 
-sudo pacman -Sy tlpui tumbler ufw ufw-extras ugrep un{zip,rar} unrar-free variety vim virt-manager wget xclip yakuake zip zramswap zram-generator zstd
-
-sleep 1
+# Held for now
+# sudo pacman -Sy tlp tlp-rdw tlpui p7zip-gui pulseeffects zramd
 
 # read -n 1 -r -s -p $'Press enter to continue...\n'
 
 echo "Package installation completed."
 
-sleep 3
+sleep 2
 
 # read -n 1 -r -s -p $'Press enter to continue...\n'
 
 echo "Installing Software Packages"
 
-sudo pacman -Sy blender digikam flameshot ghostwriter gimp gimp-help-en gimp-extras inkscape kdepim-addons krita neochat rclone rclone-browser rhythmbox scribus shotwell simplescreenrecorder syncthing transmission-{cli,remote-gtk,gtk,qt} uget vlc yakuake
+sudo pacman -Sy blender digikam flameshot ghostwriter gimp gimp-help-en gitkraken inkscape kdepim-addons krita libreoffice-fresh neochat onlyoffice-bin rclone rhythmbox scribus shotwell simplescreenrecorder syncthing transmission-{cli,remote-gtk,gtk,qt} uget wps-office vlc yakuake
+
+yay rclone-browser
+yay gimp-extras
 
 echo "Package installation completed."
 
@@ -84,84 +88,37 @@ sleep 3
 # sudo dnf install earlyoom
 sudo systemctl enable --now earlyoom
 
-# Installing fonts
-
-sudo pacman -Sy ttf-font-awesome awesome-terminal-fonts powerline-fonts ttf-fira-code xorg-fonts-100dpi
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
-sudo unzip FiraCode.zip -d /usr/share/fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
-sudo unzip Meslo.zip -d /usr/share/fonts
-wget https://github.com/tolgaerok/fonts-tolga/raw/main/WPS-FONTS.zip
-sudo unzip WPS-FONTS.zip -d /usr/share/fonts/wps-office
-
-# Reloading Font
-sudo fc-cache -vf
-
-# Removing zip Files
-rm ./FiraCode.zip ./Meslo.zip ./WPS-FONTS.zip
-
 	# Install some fonts
 	display_message "[${GREEN}✔${NC}]  Installing some fonts"
 
 
-#	sudo dnf install -y redhat-{mono,text,display}-fonts
+sudo pacman -Sy ttf-font-awesome awesome-terminal-fonts powerline-fonts ttf-wps-fonts ttf-fira-code xorg-fonts-100dpi ttf-meslo-nerd
+#wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
+#sudo unzip FiraCode.zip -d /usr/share/fonts
+#wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
+#sudo unzip Meslo.zip -d /usr/share/fonts
+#wget https://github.com/tolgaerok/fonts-tolga/raw/main/WPS-FONTS.zip
+#sudo unzip WPS-FONTS.zip -d /usr/share/fonts/wps-office
+
+# Removing zip Files
+#rm ./FiraCode.zip ./Meslo.zip ./WPS-FONTS.zip
+
+yay redhat-fonts
 
 	sudo mkdir -p ~/.local/share/fonts
 	cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf
-	wget https://github.com/tolgaerok/fonts-tolga/raw/main/WPS-FONTS.zip
-	unzip WPS-FONTS.zip -d /usr/share/fonts
-
-	zip_file="Apple-Fonts-San-Francisco-New-York-master.zip"
-
-	# Check if the ZIP file exists
-	if [ -f "$zip_file" ]; then
-		# Remove existing ZIP file
-		sudo rm -f "$zip_file"
-		echo "Existing ZIP file removed."
-	fi
-
-	# Download the ZIP file
-	curl -LJO https://github.com/tolgaerok/Apple-Fonts-San-Francisco-New-York/archive/refs/heads/master.zip
-
-	# Check if the download was successful
-	if [ -f "$zip_file" ]; then
-		# Unzip the contents to the system-wide fonts directory
-		sudo unzip -o "$zip_file" -d /usr/share/fonts/
-
-		# Update font cache
-		sudo fc-cache -f -v
-
-		# Remove the ZIP file
-		rm "$zip_file"
-
-		display_message "[${GREEN}✔${NC}] Apple fonts installed successfully."
-		echo ""
-		gum spin --spinner dot --title "Re-thinking... 1 sec" -- sleep 2
-	else
-		display_message "[${RED}✘${NC}] Download failed. Please check the URL and try again."
-		gum spin --spinner dot --title "Stand-by..." -- sleep 2
-	fi
-
-	# Reloading Font
-	sudo fc-cache -vf
-
-	# Removing zip Files
-	rm ./WPS-FONTS.zip
-	sudo fc-cache -f -v
-
-	# sudo dnf install fontconfig-font-replacements -y --skip-broken && sudo dnf install fontconfig-enhanced-defaults -y --skip-broken
 
 	 sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tolgaerok/tolga-scripts/main/Fedora39/San-Francisco-family/San-Francisco-family.sh)"
 
+	# Reloading Font
+	sudo fc-cache -vf
 
 	# Enable trim support
 	sudo systemctl enable fstrim.timer
 #################################################
 
-
 	# Audio
 	[ -f /usr/bin/easyeffects ] && [ -f $HOME/.config/easyeffects/output/default.json ] && easyeffects -l default
-	[ -f /usr/bin/pulseeffects ] && [ -f $HOME/.config/PulseEffects/output/default.json ] && pulseeffects -l default
 
 	# Configure fortune
 	# If you want to display a specific fortune file or category, you can use the -e option followed by the file or category name. For example:
@@ -215,26 +172,3 @@ echo -e "|                                            |"
 echo -e "----------------------------------------------\n\n"
 
 # exit 0
-
-# Function to check port 22
-check_port22() {
-	if pgrep sshd >/dev/null; then
-		display_message "[${GREEN}✔${NC}] SSH service is running on port 22"
-		gum spin --spinner dot --title "Stand-by..." -- sleep 2
-	else
-		display_message "${RED}[✘]${NC} SSH service is not running on port 22. Install and enable SSHD service.\n"
-		gum spin --spinner dot --title "Stand-by..." -- sleep 2
-		check_error
-	fi
-}
-
-# Function to check if a service is active
-is_service_active() {
-	systemctl is-active "$1" &>/dev/null
-}
-
-# Function to check if a service is enabled
-is_service_enabled() {
-	systemctl is-enabled "$1" &>/dev/null
-}
-
