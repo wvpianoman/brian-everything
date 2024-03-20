@@ -35,7 +35,7 @@ sudo pacman -Sy acl akonadi akonadi-calendar-tools akonadi-calendar akonadi-impo
 
 sleep 2
 
-sudo pacman -Sy duf earlyoom easyeffects espeak-ng fancontrol-gui-git fastfetch fd ffmpeg ffmpegthumbnailer ffmpegthumbs figlet flatpak fortune-mod git grsync gnupg grep grub-customizer gstreamer-vaapi gstreamer gtk-engine-murrine
+sudo pacman -Sy discover duf earlyoom easyeffects espeak-ng fancontrol-gui-git fastfetch fd ffmpeg ffmpegthumbnailer ffmpegthumbs figlet flatpak fortune-mod git grsync gnupg grep grub-customizer gstreamer-vaapi gstreamer gtk-engine-murrine
 
 sleep 2
 
@@ -43,7 +43,7 @@ sudo pacman -Sy gtk-engines gum haveged htop intel-media-driver iptables-nft jq 
 
 sleep 2
 
-sudo pacman -Sy firefox-ublock-origin merkuro mpg123 nano nano-syntax-highlighting neofetch neovim neovim-qt net-snmp net-tools nftables nsxiv openssh ostree p7zip packagekit pkgconf plasma-firewall plocate powertop python python-pip
+sudo pacman -Sy firefox-ublock-origin merkuro mpg123 nano nano-syntax-highlighting neofetch neovim neovim-qt net-snmp net-tools nftables nsxiv openssh ostree p7zip packagekit pkgconf plasma-firewall pamac-aur plocate powertop python python-pip
 
 sleep 2
 
@@ -64,7 +64,7 @@ sleep 2
 
 echo "Installing Software Packages"
 
-sudo pacman -Sy arcolinux-teamviewer blender digikam discord flameshot ghostwriter gimp gimp-help-en gitkraken inkscape kdepim-addons krita libreoffice-fresh neochat onlyoffice-bin rclone rhythmbox scribus shotwell simplescreenrecorder syncthing telegram-desktop transmission-{cli,remote-gtk,gtk,qt} uget wps-office vlc yakuake
+sudo pacman -Sy appimagelauncher arcolinux-teamviewer blender digikam discord flameshot ghostwriter gimp gimp-help-en gitkraken inkscape kdepim-addons krita libreoffice-fresh neochat onlyoffice-bin rclone rhythmbox scribus shotwell simplescreenrecorder syncthing telegram-desktop transmission-{cli,remote-gtk,gtk,qt} uget wps-office vlc yakuake
 
 yay rclone-browser
 yay gimp-extras
