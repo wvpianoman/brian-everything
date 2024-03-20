@@ -31,7 +31,7 @@ echo "Installing Essential Software Packages"
 
 #wget bit.ly/get-arcolinux-keys && chmod +x ./get-arcolinux-keys  && sudo ./get-arcolinux-keys && sudo pacman -Syu archlinux-tweak-tool-git
 
-sudo pacman -Sy acl akonadi akonadi-calendar-tools akonadi-calendar akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates ca-certificates-mozilla ca-certificates-utils cachyos-lavender-kde-theme-git cifs-utils cjson codec2 cowsay curl dbus-glib dconf-editor dialog direnv
+sudo pacman -Sy acl akonadi akonadi-calendar-tools akonadi-calendar akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates ca-certificates-mozilla ca-certificates-utils cifs-utils cjson codec2 cowsay curl dbus-glib dconf-editor dialog direnv
 
 sleep 2
 
@@ -43,7 +43,7 @@ sudo pacman -Sy gtk-engines gum haveged htop intel-media-driver iptables-nft jq 
 
 sleep 2
 
-sudo pacman -Sy firefox-ublock-origin merkuro mpg123 nano nano-syntax-highlighting neofetch neovim neovim-qt net-snmp net-tools nftables nsxiv openssh ostree p7zip packagekit pkgconf plasma-firewall pamac-aur plocate powertop python python-pip
+sudo pacman -Sy firefox-ublock-origin merkuro mpg123 nano nano-syntax-highlighting neofetch neovim neovim-qt net-snmp net-tools nftables nsxiv openssh ostree p7zip packagekit pkgconf plasma-firewall pamac-aur mlocate powertop python python-pip
 
 sleep 2
 
