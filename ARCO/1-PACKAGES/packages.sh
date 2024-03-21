@@ -23,11 +23,11 @@
 
 # clear
 
-
-
 # read -n 1 -r -s -p $'Press enter to continue...\n'
 
 echo "Installing Essential Software Packages"
+
+# to use on CachyOS to install Arco keys and tools
 
 #wget bit.ly/get-arcolinux-keys && chmod +x ./get-arcolinux-keys  && sudo ./get-arcolinux-keys && sudo pacman -Syu archlinux-tweak-tool-git
 
@@ -39,7 +39,7 @@ sudo pacman -Sy discover duf earlyoom easyeffects espeak-ng fancontrol-gui-git f
 
 sleep 2
 
-sudo pacman -Sy gtk-engines gum haveged htop intel-media-driver iptables-nft jq kate kdegraphics-thumbnailers libffi libfreeaptx rabbitmq librist libsodium libtool libva-intel-driver libvdpau libvdpau-va-gl libxext llvm16-libs lsd make mbedtls meld
+sudo pacman -Sy gtk-engines gum haveged htop intel-media-driver iptables jq kate kdegraphics-thumbnailers libffi libfreeaptx rabbitmq librist libsodium libtool libva-intel-driver libvdpau libvdpau-va-gl libxext llvm16-libs lsd make mbedtls meld
 
 sleep 2
 
@@ -65,6 +65,8 @@ sleep 2
 echo "Installing Software Packages"
 
 sudo pacman -Sy appimagelauncher arcolinux-teamviewer blender digikam discord flameshot ghostwriter gimp gimp-help-en gitkraken inkscape kdepim-addons krita libreoffice-fresh neochat onlyoffice-bin rclone rhythmbox scribus shotwell simplescreenrecorder syncthing telegram-desktop transmission-{cli,remote-gtk,gtk,qt} uget wps-office vlc yakuake
+
+sudo pacman -Sy baobab debtap etcher-bin find-the-command imagewriter font-manager megasync-bin octopi pdfarranger the_platinum_searcher sublime-text-4 visual-studio-code-bin yt-dlp arcolinux-plasma-keybindings-git arcolinux-plasma-servicemenus-git arcolinux-meta-wine arcolinux-meta-utilities arcolinux-meta-samba arcolinux-meta-log arcolinux-meta-fun
 
 yay rclone-browser
 yay gimp-extras
