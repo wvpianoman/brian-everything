@@ -33,7 +33,9 @@ wget bit.ly/get-arcolinux-keys && chmod +x ./get-arcolinux-keys  && sudo ./get-a
 
 read -n 1 -r -s -p $'Press enter to continue...\n'
 
-sudo pacman -Sy arcolinux-meta-btrfs
+sudo pacman -Sy arcolinux-meta-btrfs-snappet
+
+read -n 1 -r -s -p $'Press enter to continue...\n'
 
 sudo pacman -Sy acl akonadi akonadi-calendar-tools akonadi-calendar akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates ca-certificates-mozilla ca-certificates-utils cifs-utils cjson codec2 cowsay curl dbus-glib dconf-editor dialog direnv
 
