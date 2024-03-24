@@ -31,31 +31,29 @@ echo "Installing Essential Software Packages"
 
 wget bit.ly/get-arcolinux-keys && chmod +x ./get-arcolinux-keys  && sudo ./get-arcolinux-keys && sudo pacman -Syu archlinux-tweak-tool-git
 
-read -n 1 -r -s -p $'Press enter to continue...\n'
-
-sudo pacman -Sy arcolinux-meta-btrfs-snappet
+sudo pacman -Sy arcolinux-meta-btrfs-snapper
 
 read -n 1 -r -s -p $'Press enter to continue...\n'
 
 sudo pacman -Sy acl akonadi akonadi-calendar-tools akonadi-calendar akonadi-import-wizard aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates ca-certificates-mozilla ca-certificates-utils cifs-utils cjson codec2 cowsay curl dbus-glib dconf-editor dialog direnv
 
-sleep 2
+sleep 3
 
-sudo pacman -Sy discover duf earlyoom easyeffects espeak-ng fancontrol-gui-git fastfetch fd ffmpeg ffmpegthumbnailer ffmpegthumbs figlet flatpak fortune-mod git grsync gnupg grep grub-customizer gstreamer-vaapi gstreamer gtk-engine-murrine
+sudo pacman -Sy discover dolphin-plugins duf earlyoom easyeffects espeak-ng fancontrol-gui-git fastfetch fd ffmpeg ffmpegthumbnailer ffmpegthumbs figlet flatpak fortune-mod git grsync gnupg gparted grep grub-customizer gstreamer-vaapi gstreamer gtk-engine-murrine
 
-sleep 2
+sleep 3
 
 sudo pacman -Sy gtk-engines gum haveged htop intel-media-driver iptables-nft jq kate kdegraphics-thumbnailers libffi libfreeaptx rabbitmq librist libsodium libtool libva-intel-driver libvdpau libvdpau-va-gl libxext llvm16-libs lsd make mbedtls meld
 
-sleep 2
+sleep 3
 
 sudo pacman -Sy firefox-ublock-origin merkuro mpg123 nano nano-syntax-highlighting neofetch neovim neovim-qt net-snmp net-tools nftables nsxiv openssh ostree p7zip packagekit pkgconf plasma-firewall pamac-aur mlocate powertop python python-pip
 
-sleep 2
+sleep 3
 
-sudo pacman -Sy python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat openssl sshpass sxiv tar terminator tumbler ufw ufw-extras ugrep un{zip,rar} unrar-free variety ventoy-bin vim virt-manager wget xclip yakuake zip zram-generator zstd
+sudo pacman -Sy python-setproctitle qrencode ripgrep ripgrep-all rsync rygel sassc screen socat openssl sshpass sxiv tar terminator tumbler ufw ufw-extras ugrep un{zip,rar} unrar-free variety ventoy-bin vim virt-manager wget xclip yakuake yay zip zram-generator zstd
 
-sleep 2
+sleep 3
 
 # Held for now
 # sudo pacman -Sy tlp tlp-rdw tlpui p7zip-gui pulseeffects zramd
@@ -66,11 +64,11 @@ echo "Package installation completed."
 
 sleep 2
 
-# read -n 1 -r -s -p $'Press enter to continue...\n'
+read -n 1 -r -s -p $'Press enter to continue...\n'
 
 echo "Installing Software Packages"
 
-sudo pacman -Sy appimagelauncher arcolinux-teamviewer blender digikam discord flameshot ghostwriter gimp gimp-help-en gitkraken inkscape kdepim-addons krita libreoffice-fresh neochat onlyoffice-bin rclone rhythmbox scribus shotwell simplescreenrecorder syncthing telegram-desktop transmission-{cli,remote-gtk,gtk,qt} uget wps-office vlc yakuake
+sudo pacman -Sy appimagelauncher arcolinux-teamviewer blender digikam discord flameshot ghostwriter gimp gimp-help-en gitkraken inkscape kdepim-addons krita libreoffice-fresh neochat onlyoffice-bin rclone rhythmbox scribus shotwell simplescreenrecorder syncthing telegram-desktop uget wps-office vlc yakuake
 
 sudo pacman -Sy baobab debtap etcher-bin find-the-command imagewriter font-manager megasync-bin octopi pdfarranger the_platinum_searcher sublime-text-4 visual-studio-code-bin yt-dlp arcolinux-plasma-keybindings-git arcolinux-plasma-servicemenus-git arcolinux-meta-wine arcolinux-meta-utilities arcolinux-meta-samba arcolinux-meta-log arcolinux-meta-fun
 
