@@ -69,7 +69,7 @@ elif [ -f /etc/arch-release ]; then
     echo -e "\e[34mArch Linux-based distribution detected.\e[0m"  # Blue color
     echo ""
 #    install_arch_packages "${arch_packages[@]}"
-    ( exec "$HOME/GitHub/brian-everything/ARCO/1-PACKAGES/packages.sh" )
+    ( exec "$HOME/GitHub/brian-everything/CACHY/1-PACKAGES/packages.sh" )
 else
     echo "Unsupported distribution."
 fi
