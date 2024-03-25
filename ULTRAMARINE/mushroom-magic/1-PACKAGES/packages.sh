@@ -40,21 +40,19 @@ sleep 3
 
 echo "Installing Essential Software Packages"
 
-sudo dnf install -y acl akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv
+sudo dnf install -y acl akonadi akonadi-calendar-tools akonadi-import-wizard arc-kde-yakuake aria2 attr autoconf automake bash-completion bc binutils btop busybox ca-certificates cifs-utils cjson codec2 cowsay crontabs curl dbus-glib dconf-editor dialog direnv dnf-plugins-core dnf-utils dnfdragora dnsutils dnf5 dnf5-plugins
 
-sudo dnf install -y dnf-plugins-core dnf-utils dnfdragora dnsutils dnf5 dnf5-plugins duf earlyoom easyeffects espeak espeak-ng fancontrol-{gui,gui-kcm,gui-plasmoid} fastfetch fd-find ffmpeg ffmpeg-libs ffmpegthumbnailer ffmpegthumbs figlet flatpak fortune-mod git
+sudo dnf install -y dolphin-plugins duf earlyoom easyeffects espeak espeak-ng fancontrol-{gui,gui-kcm,gui-plasmoid} fastfetch fd-find ffmpeg ffmpeg-libs ffmpegthumbnailer ffmpegthumbs figlet flatpak fortune-mod git gnupg2 grep grub-customizer gstreamer1-{libav,vaapi} gstreamer1-plugins-{bad-free,bad-free-extras,good,good-extras,ugly,ugly-free}
 
-sudo dnf install -y gnupg2 google-noto-emoji-color-fonts grep grub-customizer gstreamer1-{libav,vaapi} gstreamer1-plugins-{bad-free,bad-free-extras,good,good-extras,ugly,ugly-free} gtk-murrine-engine gtk{2,3}-immodule-xim gtk2-engines haveged htop ibus-gtk4 intel-media-driver iptables iptables-services jq
+sudo dnf install -y gtk-murrine-engine gtk{2,3}-immodule-xim gtk2-engines haveged htop ibus-gtk4 intel-media-driver iptables iptables-services jq kate kate-plugins kernel-modules-extra kdegraphics-thumbnailers kdepim libavcodec-{free,freeworld} libffi libfreeaptx libfreeaptx-tools libgcab1 librabbitmq librabbitmq-tools librist libsodium libtool libva-intel-driver libvdpau libvdpau-va-gl
 
-sudo dnf install -y kate kate-plugins kernel-modules-extra kdegraphics-thumbnailers kdepim libavcodec-{free,freeworld} libffi libffi-devel libfreeaptx libfreeaptx-tools libgcab1 librabbitmq librabbitmq-tools librist libsodium libsodium-devel libtool libva-intel-driver libvdpau libvdpau-va-gl libXext
+sudo dnf install -y libXext llvm16-libs lpcnetfreedv lsd make materia-kde-yakuake mbedtls meld mesa-filesystem mesa-libEGL mesa-libGL mesa-libGL{w,U} mesa-libglapi mesa-libO{penCL,SMesa} mesa-va-drivers mesa-vulkan-drivers mozilla-ublock-origin merkuro mpg123 nano neofetch neovim neovim-qt net-snmp net-tools nftables openssh openssh-{clients,server}
 
-sudo dnf install -y llvm16-libs lpcnetfreedv lsd make materia-kde-yakuake mbedtls meld mesa-{libGL,libGLU,libd3d}-devel mesa-filesystem mesa-libEGL mesa-libGL mesa-libGL{w,U} mesa-libglapi mesa-libO{penCL,SMesa} mesa-va-drivers mesa-vulkan-drivers mozilla-ublock-origin merkuro mpg123
+sudo dnf install -y  ostree p7zip p7zip-gui p7zip-plugins PackageKit pandoc pip pipewire-codec-aptx pkg-config plasma-discover-{flatpak,packagekit,snap} plasma-firewall-ufw plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode ripgrep rsync rygel sassc screen socat
 
-sudo dnf install -y nano neofetch neovim neovim-qt net-snmp net-tools nftables openssh openssh-{clients,server} ostree p7zip p7zip-gui p7zip-plugins PackageKit pandoc pip pipewire-codec-aptx pkg-config plasma-discover-{flatpak,packagekit,snap} plasma-firewall-ufw
+sudo dnf install -y openssl-devel sshpass sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ufw ufw-kde ugrep un{zip,rar} unrar-free variety vim virt-manager wget wsdd xclip zip zram zram-generator zram-generator-defaults zstd
 
-sudo dnf install -y plocate powertop pulseeffects python3 python3-pip python3-setproctitle qrencode rclone rclone-browser ripgrep rsync rygel sassc screen socat openssl-devel sshpass sxiv tar terminator tlp tlp-rdw
 
-sudo dnf install -y tlpi tumbler tumbler-extras ufw ufw-kde ugrep un{zip,rar} unrar-free variety vim virt-manager wget wsdd xclip xorg-x11-fonts-ISO8859-1-100dpi zip zram zram-generator zram-generator-defaults zstd
 
 sleep 3
 
@@ -70,7 +68,7 @@ echo "Installiong Software Packages"
 
 sudo dnf install -y blender boomaga digikam flameshot ghostwriter gimp gimp-help gimp-data-extras inkscape kdepim kdepim-addons krita neochat rhythmbox scribus shotwell
 
-sudo dnf install -y simplescreenrecorder syncthing transmission transmission-{remote-gtk,gtk,qt} uget vlc yakuake
+sudo dnf install -y rclone rclone-browser simplescreenrecorder syncthing uget vlc yakuake
 
 echo "Package installation completed."
 
@@ -95,7 +93,6 @@ sudo systemctl enable --now earlyoom
 sudo dnf install curl cabextract xorg-x11-font-utils fontconfig -y
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
-sudo apt install fonts-font-awesome
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
 sudo unzip FiraCode.zip -d /usr/share/fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
@@ -113,7 +110,7 @@ rm ./FiraCode.zip ./Meslo.zip ./WPS-FONTS.zip
 	display_message "[${GREEN}✔${NC}]  Installing some fonts"
 
 	sudo dnf install -y fontawesome-fonts powerline-fonts 'google-roboto*' 'mozilla-fira*' fira-code-fonts
-	sudo dnf install -y redhat-{mono,text,display}-fonts
+	sudo dnf install -y redhat-{mono,text,display}-fonts xorg-x11-fonts-ISO8859-1-100dpi google-noto-emoji-color-fonts
 
 	sudo mkdir -p ~/.local/share/fonts
 	cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf
