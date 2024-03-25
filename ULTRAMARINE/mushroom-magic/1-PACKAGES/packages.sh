@@ -23,6 +23,33 @@
 
 # clear
 
+# Function to check if a service is active
+is_service_active() {
+	systemctl is-active "$1" &>/dev/null
+}
+
+# Function to check if a service is enabled
+is_service_enabled() {
+	systemctl is-enabled "$1" &>/dev/null
+}
+
+# Function to print text in yellow color
+print_yellow() {
+	echo -e "\e[93m$1\e[0m"
+}
+
+# Function to check port 22
+check_port22() {
+	if pgrep sshd >/dev/null; then
+		display_message "[${GREEN}✔${NC}] SSH service is running on port 22"
+		gum spin --spinner dot --title "Stand-by..." -- sleep 2
+	else
+		display_message "${RED}[✘]${NC} SSH service is not running on port 22. Install and enable SSHD service.\n"
+		gum spin --spinner dot --title "Stand-by..." -- sleep 2
+		check_error
+	fi
+}
+
 echo "Installing RPM Fusion Repositories"
 
 	# Install Apps
@@ -52,8 +79,6 @@ sudo dnf install -y  ostree p7zip p7zip-gui p7zip-plugins PackageKit pandoc pip 
 
 sudo dnf install -y openssl-devel sshpass sxiv tar terminator tlp tlp-rdw tlpi tumbler tumbler-extras ufw ufw-kde ugrep un{zip,rar} unrar-free variety vim virt-manager wget wsdd xclip zip zram zram-generator zram-generator-defaults zstd
 
-
-
 sleep 3
 
 # read -n 1 -r -s -p $'Press enter to continue...\n'
@@ -66,9 +91,7 @@ sleep 3
 
 echo "Installiong Software Packages"
 
-sudo dnf install -y blender boomaga digikam flameshot ghostwriter gimp gimp-help gimp-data-extras inkscape kdepim kdepim-addons krita neochat rhythmbox scribus shotwell
-
-sudo dnf install -y rclone rclone-browser simplescreenrecorder syncthing uget vlc yakuake
+sudo dnf install -y blender boomaga digikam flameshot ghostwriter gimp gimp-help gimp-data-extras inkscape kdepim kdepim-addons krita neochat rclone rclone-browser rhythmbox scribus shotwell simplescreenrecorder syncthing uget vlc yakuake
 
 echo "Package installation completed."
 
@@ -228,45 +251,3 @@ echo -e "|                                            |"
 echo -e "----------------------------------------------\n\n"
 
 # exit 0
-
-# Function to check port 22
-check_port22() {
-	if pgrep sshd >/dev/null; then
-		display_message "[${GREEN}✔${NC}] SSH service is running on port 22"
-		gum spin --spinner dot --title "Stand-by..." -- sleep 2
-	else
-		display_message "${RED}[✘]${NC} SSH service is not running on port 22. Install and enable SSHD service.\n"
-		gum spin --spinner dot --title "Stand-by..." -- sleep 2
-		check_error
-	fi
-}
-
-# Function to check if a service is active
-is_service_active() {
-	systemctl is-active "$1" &>/dev/null
-}
-
-# Function to check if a service is enabled
-is_service_enabled() {
-	systemctl is-enabled "$1" &>/dev/null
-}
-
-# Function to print text in yellow color
-print_yellow() {
-	echo -e "\e[93m$1\e[0m"
-}
-
-install_apps() {
-	display_message "[${GREEN}✔${NC}]  Installing afew personal apps..."
-
-	# Enable trim support
-	sudo systemctl enable fstrim.timer
-
-	# Execute rygel to start DLNA sharing
-	/usr/bin/rygel-preferences
-
-	# Install profile-sync: it to manage browser profile(s) in tmpfs and to periodically sync back to the physical disc (HDD/SSD)
-	sudo dnf install profile-sync-daemon
-	/usr/bin/profile-sync-daemon preview
-	# sudo dnf remove profile-sync-daemon
-	# psd profile located in $HOME/.config/psd/psd.conf

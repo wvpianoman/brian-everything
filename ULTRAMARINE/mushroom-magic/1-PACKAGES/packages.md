@@ -79,7 +79,6 @@ The following software is being installed on the system:
     libavcodec-freeworld              Freeworld libavcodec to complement the distro counterparts
     libdvdcss                         A portable abstraction library for DVD decryption
     libffi                            A portable foreign function interface library
-    libffi-devel                      Development files for libffi
 	libfreeaptx                       Open Source implementation of Audio Processing Technology codec (aptX)
 	libfreeaptx-tools                 libfreeaptx encoder and decoder utilities
 	libgcab1                          Library to create Cabinet archives
@@ -101,14 +100,11 @@ The following software is being installed on the system:
     meld                              graphical tool to diff and merge files
     merkuro                           A calendar application using Akonadi to sync with external services (Nextcloud, GMail, ...)
     mesa-filesystem                   Mesa driver filesystem
-    mesa-libd3d-devel                 Mesa Direct3D9 state tracker development package
     mesa-libEGL                       Mesa libEGL runtime libraries
     mesa-libGL                        Mesa libGL runtime libraries
-    mesa-libGL-devel                  Mesa libGL development package
     mesa-libglapi                     Mesa shared glapi
     mesa-libGLw                       Motif OpenGL widgets
     mesa-libGLU                       Mesa libGLU library
-    mesa-libGLU-devel                 Development files for mesa-libGLU
     mesa-libOpenCL                    Mesa OpenCL runtime library
     mesa-libOSMesa                    Mesa offscreen rendering libraries
     mesa-va-drivers                   Mesa-based VA-API video acceleration drivers
@@ -125,7 +121,6 @@ The following software is being installed on the system:
     openssh                           An open source implementation of SSH protocol version 2
     openssh-clients                   An open source SSH client applications
     openssh-server                    An open source SSH server daemon
-    openssl-devel                     Files for development of applications which will use OpenSSL
     ostree                            Tool for managing bootable, immutable filesystem trees
     p7zip                             Very high compression ratio file archiver
     p7zip-plugins                     Additional plugins for p7zip
@@ -203,8 +198,6 @@ The following software is being installed on the system:
     shotwell                          Digital Photo Organizer
     simplescreenrecorder              Feature-rich screen recorder for X11 and OpenGL
     syncthing                         Continuous File Synchronization
-    transmission                      Lightweight BitTorrent Client
-    transmission-{remote-gtk,gtk,qt}  Lightweight BitTorrent Client (GTK+ & QT Interface)
     uget                              easy-to-use download manager written in GTK+
     vlc                               Multimedia player and streaming server.
     yakuake                           A drop-down terminal emulator
