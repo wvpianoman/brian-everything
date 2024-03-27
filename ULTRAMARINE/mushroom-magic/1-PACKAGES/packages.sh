@@ -53,13 +53,12 @@ check_port22() {
 echo "Installing RPM Fusion Repositories"
 
 	# Install Apps
-	sudo dnf install \
+	sudo dnf install -y \
   https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-    sudo dnf install \
+    sudo dnf install -y \
   https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-	sudo dnf install rpmfusion-free-release-tainted
-	sudo dnf install rpmfusion-nonfree-release-tainted
-	sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
+	sudo dnf install -y rpmfusion-free-release-tainted rpmfusion-nonfree-release-tainted
+#	sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 
 sleep 3
 
@@ -109,11 +108,11 @@ sleep 3
 
 # read -n 1 -r -s -p $'Press enter to continue...\n'
 
-sudo dnf install earlyoom
+sudo dnf install -y earlyoom
 sudo systemctl enable --now earlyoom
 
-# Installing fonts
-sudo dnf install curl cabextract xorg-x11-font-utils fontconfig -y
+# Installing fonts & font tools
+sudo dnf install -y curl cabextract xorg-x11-font-utils fontconfig -y
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
@@ -203,7 +202,7 @@ rm ./FiraCode.zip ./Meslo.zip ./WPS-FONTS.zip
 	/usr/bin/rygel-preferences
 
 	# Install profile-sync: it to manage browser profile(s) in tmpfs and to periodically sync back to the physical disc (HDD/SSD)
-	sudo dnf install profile-sync-daemon
+	sudo dnf install -y profile-sync-daemon
 	/usr/bin/profile-sync-daemon preview
 	# sudo dnf remove profile-sync-daemon
 	# psd profile located in $HOME/.config/psd/psd.conf
