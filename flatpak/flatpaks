@@ -1,4 +1,3 @@
-#app/eu.betterbird.Betterbird/x86_64/beta
 app/com.axosoft.GitKraken/x86_64/stable
 app/com.github.rafostar.Clapper/x86_64/stable
 app/com.github.tchx84.Flatseal/x86_64/stable
@@ -17,6 +16,7 @@ app/io.missioncenter.MissionCenter/x86_64/stable
 app/it.mijorus.gearlever/x86_64/stable
 app/net.codelogistics.webapps/x86_64/stable
 app/org.onlyoffice.desktopeditors/x86_64/stable
+#app/eu.betterbird.Betterbird/x86_64/beta
 ##app/com.discordapp.Discord/x86_64/stable
 ##app/com.mattjakeman.ExtensionManager/x86_64/stable
 ##app/com.obsproject.Studio/x86_64/stable
