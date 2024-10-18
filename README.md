@@ -1,6 +1,6 @@
 # brian-everything
 
- This is my personal installation/maintenance scripts for **ArcoLinux** (*Arch*), **UltraMarine** (*Fedora*), **Solus** and  **GhostBSD** *(FreeBSD*).  I am tinkering with **MocaccinoOS** *Gentoo* also.  You will see a **MXLinux** (*Debian*) here, but I only have it as a backup/failsafe/woops (because sometimes I tinker until I break my OS, and I HAVE to get back up and going *A.S.A.P*)
+ This is my personal installation/maintenance scripts for  **UltraMarine** (*Fedora*), **Solus** and **MXLinux** (*Debian*) here, but I only have it as a backup/failsafe/woops (because sometimes I tinker until I break my OS, and I HAVE to get back up and going *A.S.A.P*)
  
  I do have this repo curated to fiot my personal use-case, but you may find some help/ideas here to help you on your Linux journey.
 
